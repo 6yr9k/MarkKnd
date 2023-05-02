@@ -142,6 +142,7 @@ body {
 		line-height: 34px;
 		color: #000;
 		transform: translate(0px, -2px);
+		padding: 20px;
 		&::before {
 			content: "";
 			width: 60px;
@@ -268,8 +269,8 @@ body {
 		display: none;
 	}
 	&__checkbox:checked ~ .burger__main-menu {
-		height: 330px;
-		font-size: 16px;
+		height: 290px;
+		// font-size: 14px;
 	}
 	
 	// .burger__label
@@ -354,7 +355,7 @@ body {
 		bottom: 44px;
 		left: 0;
 		transform: translateY(100%);
-		background-color: #000000;
+		background-color: #1E1E1E;
 		border-radius: 10px;
 		display: inline-flex;
 		flex-direction: column;
@@ -364,7 +365,7 @@ body {
 		// padding: 45px 0px 0px 0px;
 	}
 	&__shell {
-		padding: 20px 0;
+		padding: 15px 0;
 		position: relative;
 		top: 35px;
 	}
@@ -372,7 +373,7 @@ body {
 	&__link {
 		color: #FFFFFF;
 		font-weight: 500;
-		font-size: 25px;
+		font-size: 20px;
 		line-height: 30px;
 	}
 }
