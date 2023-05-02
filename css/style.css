@@ -144,12 +144,12 @@ body {
 }
 @media (max-width: 991.98px) {
   .header__items {
-    padding: 12px 0;
+    padding: 25px 0;
   }
 }
 @media (max-width: 767.98px) {
   .header__items {
-    padding: 0px 0;
+    padding: 15px 0;
   }
 }
 .header__logo {
@@ -166,7 +166,7 @@ body {
   -webkit-transform: translate(0px, -2px);
       -ms-transform: translate(0px, -2px);
           transform: translate(0px, -2px);
-  padding: 20px;
+  padding: 0px 20px 0px 0px;
   /* №3 */
 }
 .header__logo::before {
