@@ -37,10 +37,9 @@ export default {
   border-radius: 14px;
   margin: 30px 0;
   padding: 15px 30px;
-  width: 1440px;
+  width: 100%;
   font-size: 1.2em;
   transition: max-height 0.5s ease-out;
-  overflow: hidden;
 }
 
 .question__btn {

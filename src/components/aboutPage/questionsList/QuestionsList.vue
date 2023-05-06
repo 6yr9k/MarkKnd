@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <questions-list-item
-      v-for="(question, idx) of questions"
-      :key="question.id"
-      :question="question"
-      :idx="idx"
-      :show="showIdx === idx"
-      @toggle="toggleAnswer(idx)"
-    />
-  </div>
+  <questions-list-item
+    v-for="(question, idx) of questions"
+    :key="question.id"
+    :question="question"
+    :idx="idx"
+    :show="showIdx === idx"
+    @toggle="toggleAnswer(idx)"
+  />
+  <BookNow />
 </template>
 
 <script>
 import QuestionsListItem from '@/components/aboutPage/questionsListItem/QuestionsListItem.vue';
+import BookNow from '@/components/aboutPage/bookNow/BookNow.vue';
 
 export default {
-  components: { QuestionsListItem },
+  components: { BookNow, QuestionsListItem },
   data() {
     return {
       showIdx: -1,
@@ -56,3 +56,5 @@ export default {
   },
 };
 </script>
+
+<style></style>
