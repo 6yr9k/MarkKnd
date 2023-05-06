@@ -1,15 +1,17 @@
 <template>
-  <div class="description__wrapper">
-    <div class="aboutUs__description">
+  <v-sheet class="description__wrapper">
+    <div class="about__description">
       <div class="bg">
         <img src="./img/leftBg.jpg" alt="bg" />
       </div>
-      <div class="aboutUs__text_wrapper">
-        <h1 class="aboutUs__title">About Us</h1>
-        <p class="aboutUs__text">
+      <div class="about__text_wrapper">
+        <h1 class="about__title">About Us</h1>
+        <p class="about__text">
           BJ Group offers custom Web-Design services, from initial concept to final delivery! We have the expertise,
           experience and unique insight that allows us to create a compelling and unique design for each customer.
         </p>
+
+        <v-btn rounded elevation="10" class="about__btn">Explore Now</v-btn>
       </div>
 
       <div class="bg">
@@ -17,7 +19,7 @@
       </div>
     </div>
     <FaqDivider />
-  </div>
+  </v-sheet>
 </template>
 
 <style>
@@ -28,7 +30,7 @@
   width: 100%;
 }
 
-.aboutUs__description {
+.about__description {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -37,13 +39,13 @@
   padding: 2rem 0;
 }
 
-.aboutUs__title {
+.about__title {
   font-size: 34px;
   font-weight: 600;
   line-height: 42px;
 }
 
-.aboutUs__text {
+.about__text {
   max-width: 640px;
   font-size: 22px;
   text-align: center;
@@ -51,7 +53,7 @@
   line-height: 155%;
 }
 
-.aboutUs__text_wrapper {
+.about__text_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +64,32 @@
 
 .bg {
   max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .about__btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__text {
+    font-size: 15px;
+  }
+
+  .bg {
+    display: none;
+  }
+
+  .about__btn {
+    display: block;
+    width: 187px;
+    margin-top: 2rem;
+    background: #000;
+    color: #fff;
+    font-size: 19px;
+    text-transform: capitalize;
+  }
 }
 </style>
 <script setup>

@@ -1,10 +1,12 @@
 <template>
-  <div class="bookNow__wrapper">
-    <div class="book">Hurry up to book a call with our team!</div>
+  <v-sheet class="bookNow__wrapper">
+    <div class="book">
+      <p>Hurry up to, order a design from our team!</p>
+    </div>
     <div class="book__btn">
       <v-btn variant="flat" class="btn">Book now</v-btn>
     </div>
-  </div>
+  </v-sheet>
 </template>
 
 <script></script>
@@ -44,5 +46,19 @@
   font-size: 20px;
   width: 100%;
   color: #000000;
+}
+
+@media (max-width: 768px) {
+  .bookNow__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .book__btn {
+    margin-top: 20px;
+  }
 }
 </style>
