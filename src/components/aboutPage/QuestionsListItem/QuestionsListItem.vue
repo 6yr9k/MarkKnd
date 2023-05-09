@@ -2,13 +2,13 @@
   <div class="question__wrapper">
     <div class="question" @click="toggle">
       <div class="question__btn">
-        <h4>{{ question.question }}</h4>
+        <h4>{{ questions.question }}</h4>
         <span class="material-symbols-outlined">
           {{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}
         </span>
       </div>
       <div class="question__answer" :class="{ show }">
-        <p>{{ question.answer }}</p>
+        <p>{{ questions.answer }}</p>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <script>
 export default {
   props: {
-    question: {
+    questions: {
       required: true,
     },
     idx: { type: Number, required: true },

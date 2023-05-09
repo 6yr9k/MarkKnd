@@ -1,13 +1,19 @@
 <template>
-  <div class="faq__wrapper">
+  <div class="divider__wrapper">
     <div class="divider" />
-    <div class="faq">FAQ</div>
+    <div class="text">{{ text }}</div>
     <div class="divider" />
   </div>
 </template>
 
+<script>
+export default {
+  props: ['text'],
+};
+</script>
+
 <style>
-.faq__wrapper {
+.divider__wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -21,7 +27,7 @@
   background-color: #000000;
 }
 
-.faq {
+.text {
   font-size: 22px;
   padding: 15px 40px;
   border: 3px solid #000000;

@@ -18,7 +18,7 @@
         <img src="./img/rightBg.jpg" alt="bg" />
       </div>
     </div>
-    <FaqDivider />
+    <FaqDivider text="FAQ" />
   </v-sheet>
 </template>
 
@@ -93,5 +93,5 @@
 }
 </style>
 <script setup>
-import FaqDivider from '@/components/aboutPage/faqDivider/faqDivider.vue';
+import FaqDivider from '@/components/common/Divider/Divider.vue';
 </script>
