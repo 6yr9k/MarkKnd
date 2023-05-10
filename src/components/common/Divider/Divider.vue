@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .divider__wrapper {
   display: flex;
   flex-direction: row;

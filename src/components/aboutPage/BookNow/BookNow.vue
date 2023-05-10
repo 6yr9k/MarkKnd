@@ -9,9 +9,7 @@
   </v-sheet>
 </template>
 
-<script></script>
-
-<style>
+<style scoped>
 .bookNow__wrapper {
   width: 100%;
   display: flex;

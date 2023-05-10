@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .contact__list_wrapper {
   font-size: 1vh;
 }

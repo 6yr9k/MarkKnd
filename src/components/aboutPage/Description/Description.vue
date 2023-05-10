@@ -22,7 +22,7 @@
   </v-sheet>
 </template>
 
-<style>
+<style scoped>
 .description__wrapper {
   display: flex;
   flex-direction: column;

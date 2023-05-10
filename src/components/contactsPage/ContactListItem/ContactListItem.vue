@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .contacts__item {
   width: 100%;
   display: flex;

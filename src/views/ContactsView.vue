@@ -18,7 +18,7 @@ import ContactList from '@/components/contactsPage/ContactList/ContactList.vue';
 import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
 </script>
 
-<style>
+<style scoped>
 .contacts {
   width: 100%;
   height: 100%;

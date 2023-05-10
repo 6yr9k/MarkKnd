@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .question {
   border: 3px solid #000000;
   border-radius: 14px;
