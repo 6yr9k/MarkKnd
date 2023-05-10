@@ -19,6 +19,7 @@ export default {
   align-items: center;
   width: 100%;
   gap: 20px;
+  margin-bottom: 100px;
 }
 
 .divider {

@@ -6,13 +6,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'hone',
+      name: 'home',
       component: HomeView,
     },
     {
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ '@/views/AboutView.vue'),
+    },
+    {
+      path: '/service',
+      name: 'service',
+      component: () => import(/* webpackChunkName: "contact" */ '@/views/ServiceView.vue'),
     },
     {
       path: '/contacts',
