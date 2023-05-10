@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <Description />
-    <QuestionsList />
-  </div>
+  <Description />
+  <QuestionsList />
 </template>
 
 <script>

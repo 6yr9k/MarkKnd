@@ -25,6 +25,7 @@ import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
   display: flex;
   flex-direction: column;
   gap: 100px;
+  margin-bottom: 60px;
 }
 
 .form__wrapper {

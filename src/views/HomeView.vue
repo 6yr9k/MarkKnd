@@ -1,10 +1,10 @@
 <template>
-  <v-app>
-    <v-container>
-      <main>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/contacts">Contacts</RouterLink>
-      </main>
-    </v-container>
-  </v-app>
+  <Customers />
+  <General />
+  <Reviews />
 </template>
+<script setup>
+import Reviews from '@/components/homePage/Reviews/Reviews.vue';
+import General from '@/components/homePage/General/General.vue';
+import Customers from '@/components/homePage/Customers/Customers.vue';
+</script>
