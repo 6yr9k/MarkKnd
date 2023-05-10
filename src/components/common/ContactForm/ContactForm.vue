@@ -47,8 +47,8 @@
 
     <v-sheet class="submit__wrapper">
       <v-btn size="large" type="submit" class="submit__btn" @click="onSubmit" :disabled="v$.$invalid"
-        >Send a Message</v-btn
-      >
+        >Send a Message
+      </v-btn>
       <span class="submit__text">We’ll answer you in the next 24 hours</span>
     </v-sheet>
   </v-form>
@@ -127,17 +127,39 @@ export default {
   font-size: 16px;
   flex-direction: row;
   align-items: center;
+  gap: 20px;
   justify-content: space-between;
 }
 
 .submit__text {
   opacity: 0.8;
+  font-size: 14px;
 }
 
 .submit__btn {
+  max-width: 240px;
+  font-size: 1.1em;
   background: #000;
   color: #fff;
   text-transform: capitalize;
   border-radius: 10px;
+}
+
+@media (max-width: 390px) {
+  .submit__wrapper {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .submit__text {
+    font-size: 9px;
+  }
+
+  .submit__btn {
+    max-width: 150px;
+    font-size: 12px;
+  }
 }
 </style>

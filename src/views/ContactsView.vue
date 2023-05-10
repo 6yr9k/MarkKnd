@@ -32,13 +32,12 @@ import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  gap: 50px;
+  gap: 30px;
 }
 
 .image__wrapper {
-  width: 480px;
-  height: 370px;
-  max-width: 100%;
+  width: 478px;
+  height: 337px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +45,8 @@ import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
 }
 
 .image__wrapper img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 320px;
+  max-height: 300px;
 }
 
 .form__container {
@@ -56,6 +55,15 @@ import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
 }
 
 @media (max-width: 768px) {
+  .form__wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .form__container {
+    width: 100%;
+  }
   .image__wrapper {
     display: none;
   }
