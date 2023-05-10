@@ -1,7 +1,9 @@
 <template>
-  <Customers />
-  <General />
-  <Reviews />
+  <v-container>
+    <Customers />
+    <General />
+    <Reviews />
+  </v-container>
 </template>
 <script setup>
 import Reviews from '@/components/homePage/Reviews/Reviews.vue';
