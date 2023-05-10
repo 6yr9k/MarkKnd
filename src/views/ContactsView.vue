@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts">
+  <v-container class="contacts">
     <ContactList />
     <div class="form__wrapper">
       <div class="image__wrapper">
@@ -9,7 +9,7 @@
         <ContactForm />
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script setup>
@@ -20,11 +20,9 @@ import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
 
 <style scoped>
 .contacts {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 70px;
   margin-bottom: 60px;
 }
 

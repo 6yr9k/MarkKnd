@@ -1,49 +1,41 @@
 <template>
-  <v-sheet class="bookNow__wrapper">
+  <v-container class="bookNow__wrapper">
     <div class="book">
       <p>Hurry up to, order a design from our team!</p>
     </div>
-    <div class="book__btn">
-      <v-btn variant="flat" class="btn">Book now</v-btn>
-    </div>
-  </v-sheet>
+    <v-btn size="x-large" variant="flat" class="book__btn"><span class="btn">Book now</span></v-btn>
+  </v-container>
 </template>
 
 <style scoped>
 .bookNow__wrapper {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-right: 17px;
-  padding-left: 30px;
   align-items: center;
-  height: 80px;
   background: #000000;
   color: #ffffff;
   border-radius: 17px;
 }
 
-.book {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 126%;
-}
-
 .book__btn {
+  font-family: 'Popins', sans-serif;
   background: #ffffff;
   padding: 13px 40px;
+  text-transform: inherit;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 20.8156px;
+  font-size: 21px;
+  color: #161719;
+  transition: all 0.3s ease-in-out;
   line-height: 126%;
+  text-align: center;
 }
-
-.btn {
-  text-transform: inherit;
+.book {
+  font-weight: 600;
+  display: inline-block;
   font-size: 20px;
-  width: 100%;
-  color: #000000;
+  line-height: 126%;
 }
 
 @media (max-width: 768px) {

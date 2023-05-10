@@ -1,9 +1,9 @@
 <template>
-  <div class="divider__wrapper">
-    <div class="divider" />
+  <v-container class="divider__wrapper">
+    <v-divider class="border-opacity-100" />
     <div class="text">{{ text }}</div>
-    <div class="divider" />
-  </div>
+    <v-divider class="border-opacity-100" />
+  </v-container>
 </template>
 
 <script>
@@ -17,18 +17,13 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   gap: 20px;
   margin-bottom: 100px;
 }
 
-.divider {
-  height: 2px;
-  width: 100%;
-  background-color: #000000;
-}
-
 .text {
+  width: 40%;
+  text-align: center;
   font-size: 22px;
   padding: 15px 40px;
   border: 3px solid #000000;
