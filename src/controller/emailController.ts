@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
-import nm from 'nodemailer';
 import { GMAIL_PASSWORD, GMAIL_USER } from '../config';
+import nodemailer from 'nodemailer';
+import { content } from '../services';
 
 export const sendEmail = async (req: Request, res: Response) => {
-  const body = req.body;
-  const transporter = await nm.createTransport({
+  const { name, email, businessType, comment } = req.body;
+
+  const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: GMAIL_USER,
@@ -12,13 +14,16 @@ export const sendEmail = async (req: Request, res: Response) => {
     },
   });
 
-  console.log(body);
-
-  const mailOptions = {
-    to: GMAIL_USER,
-  };
-
   try {
+    const { name, email, businessType, comment } = req.body;
+
+    const mailOptions = {
+      from: email,
+      to: GMAIL_USER,
+      subject: `New message from ${email}`,
+      html: content(name, email, businessType, comment),
+    };
+
     await transporter.sendMail(mailOptions);
 
     return res.status(200).json({
