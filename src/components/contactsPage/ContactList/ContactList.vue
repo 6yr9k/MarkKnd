@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Divider from '@/components/common/Divider/Divider.vue';
 import { contacts } from '@/constants/contacts';
 import ContactListItem from '@/components/contactsPage/ContactListItem/ContactListItem.vue';

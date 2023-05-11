@@ -3,9 +3,24 @@
     <div class="book">
       <p>Hurry up to, order a design from our team!</p>
     </div>
-    <v-btn size="x-large" variant="flat" class="book__btn"><span class="btn">Book now</span></v-btn>
+    <v-btn size="x-large" variant="flat" class="book__btn"><span class="btn">Book now </span> <ModalForm /> </v-btn>
   </v-container>
 </template>
+
+<script lang="ts">
+import ModalForm from '../ModalForm/ModalForm.vue';
+
+export default {
+  components: {
+    ModalForm,
+  },
+  data() {
+    return {
+      dialog: false,
+    };
+  },
+};
+</script>
 
 <style scoped>
 .bookNow__wrapper {
@@ -31,6 +46,7 @@
   line-height: 126%;
   text-align: center;
 }
+
 .book {
   font-weight: 600;
   display: inline-block;

@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <Header />
-
     <v-container>
       <RouterView />
     </v-container>

@@ -21,9 +21,6 @@
             <div>
               <v-img :src="service.bg" :alt="service.title" width="200" height="150" />
             </div>
-            <!--            <div class="card__image">-->
-            <!--              <img :src="service.bg" :alt="service.title" class="card__img" />-->
-            <!--            </div>-->
           </v-card>
         </v-item>
       </v-col>
@@ -66,16 +63,5 @@ export default {
 .card__text {
   padding: 0 5px;
   text-align: center;
-}
-
-.card__image {
-  width: 100%;
-  height: 100%;
-}
-
-.card__img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>

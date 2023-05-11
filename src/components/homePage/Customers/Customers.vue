@@ -47,14 +47,11 @@
       </div>
     </div>
   </div>
-  <div class="hurry-up">
-    <div class="hurry-up__container">
-      <div class="hurry-up__fix">
-        <div class="hurry-up__title">Hurry up to, order a design from our team!</div>
-        <div class="hurry-up__shell">
-          <a class="hurry-up__button" href=""> Order now </a>
-        </div>
-      </div>
-    </div>
+  <div class="my-16">
+    <BookNow />
   </div>
 </template>
+
+<script setup>
+import BookNow from '@/components/common/BookNow/BookNow.vue';
+</script>

@@ -2,18 +2,18 @@
   <header class="header">
     <div class="header__container">
       <div class="header__items">
-        <a href="">
+        <RouterLink to="/">
           <div class="header__logo">
             <div class="header__title">Group</div>
           </div>
-        </a>
+        </RouterLink>
         <ul class="header__menu">
           <li class="header__point"><RouterLink class="header__link" to="/">Home</RouterLink></li>
           <li class="header__point"><RouterLink class="header__link" to="/about">About</RouterLink></li>
           <li class="header__point"><RouterLink class="header__link" to="/service">Service</RouterLink></li>
           <li class="header__point"><RouterLink class="header__link" to="/contacts">Contacts</RouterLink></li>
         </ul>
-        <a href="" class="header__button">Contact Now</a>
+        <RouterLink to="/contacts" class="header__button">Contact Now</RouterLink>
         <div class="burger">
           <input class="burger__checkbox" type="checkbox" id="check-menu" />
           <label class="burger__label" for="check-menu"></label>

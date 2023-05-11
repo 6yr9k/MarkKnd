@@ -2,13 +2,9 @@ import meta from '../assets/icons/meta.png';
 import discord from '../assets/icons/discord.png';
 import telegram from '../assets/icons/telegram.png';
 import instagram from '../assets/icons/instagram.png';
+import type { Contacts } from '@/models/';
 
-/**
- *
- * @type {[{contact: string, id: number},{contact: string, icon: *, id: number},{contact: string, icon: *, id: number},{contact: string, id: number},{contact: string, icon: *, id: number}]}
- */
-
-export const contacts = [
+export const contacts: Contacts[] = [
   {
     id: 1,
     contact: 'support@bjgroup.com',

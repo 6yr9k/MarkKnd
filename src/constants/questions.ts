@@ -1,4 +1,6 @@
-export const questions = [
+import type { Questions } from '@/models';
+
+export const questions: Questions[] = [
   {
     id: 1,
     question: 'Question #1',

@@ -4,8 +4,9 @@ import multiPage from '../assets/service/multiPages.png';
 import manyPages from '../assets/service/manyPages.png';
 import wpTemplate from '../assets/service/wpTemplate.png';
 import fdTemplate from '../assets/service/fdTemplate.png';
+import type { Services } from '@/models';
 
-export const services = [
+export const services: Services[] = [
   {
     id: 1,
     title: 'Redesign',

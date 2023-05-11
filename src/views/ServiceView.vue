@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex flex-column service">
+  <v-container class="d-flex flex-column service" data-aos="fade-zoom-in">
     <Divider text="Our Service" />
     <ServiceList />
     <v-sheet class="py-5">
