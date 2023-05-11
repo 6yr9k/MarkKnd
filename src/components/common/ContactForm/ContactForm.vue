@@ -69,19 +69,15 @@ export default {
       formFilled: false,
     };
     const items = ref([
-      'Finance',
-      'E-Commerce',
-      'Portfolio',
+      'Finances',
+      'Construction',
       'Food',
-      'Gaming',
       'Medicine',
-      'Jurisprudence',
-      'Energetics',
-      'Building',
-      'Trading',
-      'Tourism',
-      'Cosmetology',
-      'Agriculture',
+      'Agency',
+      'Gaming',
+      'Portfolio',
+      'Web 3.0',
+      'E-Commerce',
       'Other',
     ]);
 
