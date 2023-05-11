@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { GMAIL_PASSWORD, GMAIL_USER } from '../config';
 import nodemailer from 'nodemailer';
-import { content } from '../services';
+import { emailContent } from '../services';
 
 export const sendEmail = async (req: Request, res: Response) => {
   const { name, email, businessType, comment } = req.body;
@@ -21,7 +21,7 @@ export const sendEmail = async (req: Request, res: Response) => {
       from: email,
       to: GMAIL_USER,
       subject: `New message from ${email}`,
-      html: content(name, email, businessType, comment),
+      html: emailContent(name, email, businessType, comment),
     };
 
     await transporter.sendMail(mailOptions);

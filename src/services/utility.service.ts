@@ -1,26 +1,4 @@
-export const checkBody = (body: Object, keys: string[]): string | null => {
-  const bodyKeys = Object.keys(body);
-
-  if (bodyKeys.length) {
-    return 'Body is required';
-  }
-
-  for (const key of keys) {
-    if (!body.hasOwnProperty(key)) {
-      return `${key} is required`;
-    }
-  }
-
-  if (bodyKeys.length > keys.length) {
-    const properties = bodyKeys.filter((prop) => !keys.includes(prop));
-
-    return `Properties ${properties.join(',')} shouldn't exist`;
-  }
-
-  return null;
-};
-
-export const content = (name: string, email: string, businessType: string, comment: string): string => {
+export const emailContent = (name: string, email: string, businessType: string, comment: string): string => {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
   xmlns="http://www.w3.org/1999/xhtml"
