@@ -1,6 +1,8 @@
 export interface Services {
-  id: number;
+  id?: number;
   title: string;
   shortDescription: string;
+  longDescription?: string;
+  providedList?: string[];
   bg: string;
 }

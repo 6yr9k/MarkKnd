@@ -1,3 +1,14 @@
+<script>
+import { links } from '@/constants';
+
+export default {
+  data: () => {
+    return {
+      links,
+    };
+  },
+};
+</script>
 <template>
   <footer class="footer">
     <div class="footer__container">
@@ -16,10 +27,7 @@
         <div class="footer__itemo">
           <div class="footer__column">
             <div class="footer__title">Learn</div>
-            <a href="" class="footer__link">Home</a>
-            <a href="" class="footer__link">About</a>
-            <a href="" class="footer__link">Service</a>
-            <a href="" class="footer__link">Contacts</a>
+            <RouterLink v-for="link of links" class="footer__link" :to="link.path">{{ link.name }}</RouterLink>
           </div>
           <div class="footer__column">
             <div class="footer__title">Social Media</div>

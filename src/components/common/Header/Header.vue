@@ -1,3 +1,15 @@
+<script>
+import { links } from '@/constants/';
+
+export default {
+  data: () => {
+    return {
+      links,
+    };
+  },
+};
+</script>
+
 <template>
   <header class="header">
     <div class="header__container">
@@ -7,11 +19,10 @@
             <div class="header__title">Group</div>
           </div>
         </RouterLink>
-        <ul class="header__menu">
-          <li class="header__point"><RouterLink class="header__link" to="/">Home</RouterLink></li>
-          <li class="header__point"><RouterLink class="header__link" to="/about">About</RouterLink></li>
-          <li class="header__point"><RouterLink class="header__link" to="/service">Service</RouterLink></li>
-          <li class="header__point"><RouterLink class="header__link" to="/contacts">Contacts</RouterLink></li>
+        <ul class="header__menu" v-for="link of links">
+          <li class="header__point">
+            <RouterLink class="header__link" :to="link.path">{{ link.name }}</RouterLink>
+          </li>
         </ul>
         <RouterLink to="/contacts" class="header__button">Contact Now</RouterLink>
         <div class="burger">

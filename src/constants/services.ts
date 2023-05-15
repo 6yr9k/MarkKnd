@@ -12,6 +12,13 @@ export const services: Services[] = [
     title: 'Redesign',
     shortDescription:
       'Our redesign services will help you increase brand awareness and promote your business at a competitive price',
+    longDescription:
+      "If your website is old and needs an overhaul, we can redesign it and transform it into a professional-looking site with a unique concept that's tailored to your brand.",
+    providedList: [
+      'We are a marketing agency that helps big and small companies.',
+      'We are a marketing agency that helps big and small companies.',
+      'We are a marketing agency that helps big and small companies.',
+    ],
     bg: redesign,
   },
   {

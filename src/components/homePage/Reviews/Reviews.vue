@@ -97,6 +97,5 @@ import Divider from '@/components/common/Divider/Divider.vue';
 
 export default {
   components: { Divider },
-  data: () => ({ rating: 5 }),
 };
 </script>

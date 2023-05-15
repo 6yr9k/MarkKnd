@@ -1,5 +1,6 @@
 <template>
   <v-item-group mandatory>
+    <Divider text="Our Service" />
     <v-row>
       <v-col
         v-for="service in services"
@@ -10,58 +11,19 @@
         lg="4"
         sm="9"
       >
-        <v-item v-slot="{ isSelected, toggle }">
-          <v-card :color="isSelected ? '' : ''" class="card" width="337" height="387" @click="toggle">
-            <div class="card__title">
-              <h2>{{ service.title }}</h2>
-            </div>
-            <div class="card__text">
-              <h4>{{ service.shortDescription }}</h4>
-            </div>
-            <div>
-              <v-img :src="service.bg" :alt="service.title" width="200" height="150" />
-            </div>
-          </v-card>
-        </v-item>
+        <service-list-item
+          :title="service.title"
+          :short-description="service.shortDescription"
+          :bg="service.bg"
+          :id="service?.id"
+        />
       </v-col>
     </v-row>
   </v-item-group>
 </template>
 
-<script>
+<script lang="ts" setup>
 import { services } from '@/constants';
-
-export default {
-  data() {
-    return {
-      services,
-    };
-  },
-};
+import ServiceListItem from '@/components/servicePage/ServiceListItem/ServiceListItem.vue';
+import Divider from '@/components/common/Divider/Divider.vue';
 </script>
-
-<style scoped>
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-  border: 2px solid #000000;
-  border-radius: 25px;
-}
-
-.card__title {
-  width: 100%;
-  padding: 5px 0;
-  text-align: center;
-  color: #ffffff;
-  background-color: #000000;
-  border-radius: 15px;
-}
-
-.card__text {
-  padding: 0 5px;
-  text-align: center;
-}
-</style>
