@@ -7,11 +7,19 @@ export const sendEmail = async (req: Request, res: Response) => {
   const { name, email, businessType, comment } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'mtp.office365.com',
+    service: '',
+    secure: false,
+    tls: {
+      ciphers: 'SSLv3',
+      rejectUnauthorized: false,
+    },
     auth: {
       user: GMAIL_USER,
       pass: GMAIL_PASSWORD,
     },
+    debug: true,
+    logger: true,
   });
 
   try {
