@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .bookNow__wrapper {
   display: flex;
   flex-direction: row;

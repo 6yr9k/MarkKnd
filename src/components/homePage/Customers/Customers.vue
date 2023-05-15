@@ -11,7 +11,9 @@
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <a href="" class="customers__button">Explore Now</a>
+          <v-btn size="x-large" variant="flat" color="black" class="book__btn" style="border-radius: 13px"
+            ><span class="btn">Explore now</span> <ModalForm />
+          </v-btn>
         </div>
         <div class="customers__img_2">
           <img src="../../../assets/bj/101Thinking1.svg" alt="" class="customers__image_2" />
@@ -54,4 +56,5 @@
 
 <script setup>
 import BookNow from '@/components/common/BookNow/BookNow.vue';
+import ModalForm from '@/components/common/ModalForm/ModalForm.vue';
 </script>

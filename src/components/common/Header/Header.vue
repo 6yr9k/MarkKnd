@@ -33,10 +33,9 @@ export default {
           <div class="burger__line burger__line_3"></div>
           <div class="burger__line burger__line_4"></div>
           <nav class="burger__main-menu">
-            <div class="burger__shell"><a href="" class="burger__link">Home</a></div>
-            <div class="burger__shell"><a href="" class="burger__link">About</a></div>
-            <div class="burger__shell"><a href="" class="burger__link">Service</a></div>
-            <div class="burger__shell"><a href="" class="burger__link">Contacts</a></div>
+            <div class="burger__shell" v-for="link of links">
+              <RouterLink :to="link.path" class="burger__link">{{ link.name }}</RouterLink>
+            </div>
           </nav>
         </div>
       </div>
@@ -187,6 +186,7 @@ export default {
   color: #ffffff;
   text-align: center;
   height: 40px;
+  z-index: 666;
 }
 @media (min-width: 767.98px) {
   .burger {

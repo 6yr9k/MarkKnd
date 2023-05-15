@@ -55,8 +55,8 @@ body {
 
 [class*="__container"] {
   max-width: 1140px;
-  margin: 0px auto;
-  padding: 0px 15px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* №1 */
@@ -83,7 +83,7 @@ body {
 
 .header {
   // width: 100%;
-  margin: 0px 0px 18px 0px;
+  margin: 0 0 18px 0;
   @media (max-width: 1024px) {
 
   }
@@ -135,7 +135,7 @@ body {
       width: 60px;
       height: 60px;
       display: inline-block;
-      background: url('../img/bj/Frame6.svg') 0 0 no-repeat;
+      background: url('./bj/Frame6.svg') 0 0 no-repeat;
       transform: translate(0px, 2px);
       margin-right: 9px;
     }
@@ -157,7 +157,7 @@ body {
         width: 40px;
         height: 40px;
         display: inline-block;
-        background: url('../img/bj/Frame6.svg') 0 0 / 40px 40px no-repeat;
+        background: url('./bj/Frame6.svg') 0 0 / 40px 40px no-repeat;
         transform: translate(0px, 2px);
         margin-right: 9px;
       }
@@ -968,14 +968,14 @@ body {
       width: 30px;
       height: 30px;
       display: inline-block;
-      background: url('bj/linkedin.svg') -6px -6px no-repeat;
+      background: url('./bj/linkedin.svg') -6px -6px no-repeat;
       margin-right: 7px;
       @media (max-width: 991.98px) {
         width: 22px;
         height: 22px;
         display: inline-block;
         margin-right: 6px;
-        background: url('bj/linkedin2.svg') -5px -5px no-repeat;
+        background: url('./bj/linkedin2.svg') -5px -5px no-repeat;
       }
       @media (max-width: 767.98px) {
 
@@ -997,7 +997,7 @@ body {
       width: 30px;
       height: 30px;
       display: inline-block;
-      background: url('bj/behance.svg') -6px -6px no-repeat;
+      background: url('./bj/behance.svg') -6px -6px no-repeat;
       margin-right: 7px;
     }
 
@@ -1008,7 +1008,7 @@ body {
         height: 22px;
         display: inline-block;
         margin-right: 6px;
-        background: url('bj/behance2.svg') -5px -5px no-repeat;
+        background: url('./bj/behance2.svg') -5px -5px no-repeat;
       }
     }
   }

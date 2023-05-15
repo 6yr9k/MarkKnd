@@ -1,9 +1,7 @@
 <template>
   <div class="wrapper">
     <Header />
-    <v-container>
-      <RouterView />
-    </v-container>
+    <RouterView />
     <Footer />
   </div>
 </template>
