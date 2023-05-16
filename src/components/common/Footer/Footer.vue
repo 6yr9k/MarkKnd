@@ -9,6 +9,7 @@ export default {
   },
 };
 </script>
+
 <template>
   <footer class="footer">
     <div class="footer__container">

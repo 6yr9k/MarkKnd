@@ -12,9 +12,9 @@ const service = computed(() => {
 </script>
 
 <template>
-  <div class="mb-10">
+  <div class="service-detail__container mb-10">
     <v-breadcrumbs class="text-lg-h6"> Services <v-icon icon="mdi-chevron-right" /> {{ service.title }} </v-breadcrumbs>
-    <v-sheet elevation="12" class="d-flex flex-row py-14 px-16">
+    <v-card elevation="11" rounded="xl" class="d-flex flex-row py-14 px-16 detail">
       <div class="d-flex flex-column justify-lg-space-between">
         <span class="text-lg-h4">
           {{ service.title }}
@@ -38,11 +38,15 @@ const service = computed(() => {
         <v-btn color="black" rounded="lg">Order Now</v-btn>
         <v-btn variant="flat" append-icon="mdi-chevron-right">See reviews</v-btn>
       </div>
-    </v-sheet>
+    </v-card>
   </div>
 </template>
 
 <style lang="scss">
+.detail {
+  border: 1px solid #000000;
+}
+
 .list__item_content {
   display: flex;
   flex-direction: row;

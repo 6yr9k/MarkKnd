@@ -1,22 +1,17 @@
 <template>
-  <v-container>
-    <div data-aos="fade-zoom-in">
-      <Customers />
-    </div>
-    <div data-aos="fade-zoom-in">
-      <General />
-    </div>
-    <div data-aos="fade-zoom-in">
-      <Reviews />
-    </div>
-    <div data-aos="fade-zoom-in">
-      <ContactForm />
-    </div>
-  </v-container>
+  <main class="main">
+    <Customers />
+    <BookNow />
+    <General />
+    <Reviews />
+    <ContactForm />
+  </main>
 </template>
+
 <script setup>
-import Reviews from '@/components/homePage/Reviews/Reviews.vue';
 import General from '@/components/homePage/General/General.vue';
-import Customers from '@/components/homePage/Customers/Customers.vue';
+import Reviews from '@/components/homePage/Reviews/Reviews.vue';
+import BookNow from '@/components/common/BookNow/BookNow.vue';
 import ContactForm from '@/components/common/ContactForm/ContactForm.vue';
+import Customers from '@/components/homePage/Customers/Customers.vue';
 </script>

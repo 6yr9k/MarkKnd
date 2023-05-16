@@ -1,5 +1,7 @@
 @import 'reset';
-@import './home';
+@import 'home';
+@import "vuetify/styles";
+
 
 *,
 *::before,
@@ -35,9 +37,5 @@ a {
 }
 
 
-#app {
-  max-width: 1600px;
-  margin: 0 auto;
-  font-weight: normal;
-}
+
 

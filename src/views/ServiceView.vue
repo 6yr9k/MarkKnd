@@ -1,17 +1,17 @@
 <template>
-  <v-container class="d-flex flex-column service">
-    <v-sheet data-aos="fade-zoom-in">
+  <main class="main">
+    <div data-aos="fade-zoom-in">
       <RouterView />
-    </v-sheet>
+    </div>
 
-    <v-sheet class="py-5" data-aos="fade-zoom-in">
+    <div class="py-5" data-aos="fade-zoom-in">
       <Notice />
-    </v-sheet>
+    </div>
 
-    <v-sheet class="py-5" data-aos="fade-zoom-in">
+    <div class="py-5" data-aos="fade-zoom-in">
       <BookNow />
-    </v-sheet>
-  </v-container>
+    </div>
+  </main>
 </template>
 
 <script lang="ts" setup>
@@ -23,8 +23,4 @@ const route = useRoute();
 const id = route.params.id;
 </script>
 
-<style scoped>
-.service {
-  margin-bottom: 50px;
-}
-</style>
+<style scoped></style>

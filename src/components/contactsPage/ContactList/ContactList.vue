@@ -1,5 +1,5 @@
 <template>
-  <div class="contact__list_wrapper">
+  <div class="contact__container">
     <Divider text="Contacts" />
     <div class="contact__list">
       <div class="contacts__row">

@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="description__wrapper">
+  <div class="description__container">
     <div class="about__description">
       <div class="bg">
         <img src="./img/leftBg.jpg" alt="bg" />
@@ -19,17 +19,10 @@
       </div>
     </div>
     <FaqDivider text="FAQ" />
-  </v-sheet>
+  </div>
 </template>
 
 <style scoped>
-.description__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 .about__description {
   width: 100%;
   display: flex;

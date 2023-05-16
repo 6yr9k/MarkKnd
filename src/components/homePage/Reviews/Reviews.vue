@@ -1,7 +1,9 @@
 <template>
   <div class="reviews">
     <div class="reviews__container">
-      <Divider text="Reviews" />
+      <div class="reviews__title-shell">
+        <div class="reviews__title">Reviews</div>
+      </div>
       <div class="reviews__carousel">
         <div class="reviews__picture-button">
           <img class="reviews__carousel-button" src="../../../assets/bj/carousel-button.svg" alt="" />
@@ -26,7 +28,7 @@
                 </div>
               </div>
               <div class="item-reviews__grade">
-                <button class="item-reviews__button">Rating</button>
+                <a href="" class="item-reviews__button">Rating</a>
                 <div class="item-reviews__stars">
                   <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
                 </div>
@@ -51,7 +53,7 @@
                 </div>
               </div>
               <div class="item-reviews__grade">
-                <button class="item-reviews__button">Rating</button>
+                <a href="" class="item-reviews__button">Rating</a>
                 <div class="item-reviews__stars">
                   <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
                 </div>
@@ -76,7 +78,7 @@
                 </div>
               </div>
               <div class="item-reviews__grade">
-                <button class="item-reviews__button">Rating</button>
+                <a href="" class="item-reviews__button">Rating</a>
                 <div class="item-reviews__stars">
                   <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
                 </div>

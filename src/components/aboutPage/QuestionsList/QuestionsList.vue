@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="questions__wrapper">
+  <div class="questions__container">
     <questions-list-item
       v-for="(question, idx) of questions"
       :key="question.id"
@@ -9,7 +9,7 @@
       @toggle="toggleAnswer(idx)"
     />
     <BookNow />
-  </v-sheet>
+  </div>
 </template>
 
 <script>

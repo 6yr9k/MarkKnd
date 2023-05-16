@@ -1,83 +1,12 @@
-<template>
-  <div class="form__wrapper">
-    <div class="image__wrapper">
-      <img :src="bg" alt="bg" />
-    </div>
-    <div class="form__container">
-      <v-form class="form" @submit.prevent="onSubmit">
-        <v-text-field
-          required
-          v-model="state.name"
-          :error-messages="v$.name.$errors.map((e) => e.$message)"
-          @input="v$.name.$touch"
-          @blur="v$.name.$touch"
-          class="form__input"
-          variant="outlined"
-          placeholder="Your Name"
-        />
-        <v-text-field
-          required
-          v-model="state.email"
-          :error-messages="v$.email.$errors.map((e) => e.$message)"
-          @input="v$.email.$touch"
-          @blur="v$.email.$touch"
-          @change="v$.email"
-          class="form__input"
-          variant="outlined"
-          placeholder="Email"
-        />
-        <v-select
-          required
-          v-model="state.businessType"
-          :error-messages="v$.businessType.$errors.map((e) => e.$message)"
-          @change="v$.businessType.$touch"
-          @blur="v$.businessType.$touch"
-          :items="items"
-          class="form__input"
-          variant="outlined"
-          placeholder="Type of your Business"
-        />
-        <v-textarea
-          required
-          no-resize
-          v-model="state.comments"
-          :error-messages="v$.comments.$errors.map((e) => e.$message)"
-          @change="v$.comments.$touch"
-          @blur="v$.comments.$touch"
-          rows="3"
-          class="comment form__input"
-          variant="outlined"
-          placeholder="Ask a question or leave a request"
-        />
-
-        <v-sheet class="submit__wrapper">
-          <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid" @click="snackbar.open = true"
-            >Send a Message
-            <v-snackbar
-              v-if="snackbar.message"
-              color="#212121"
-              v-model="snackbar.open"
-              close-delay="2000"
-              position="sticky"
-              origin="top right"
-              >{{ snackbar.message }}
-            </v-snackbar></v-btn
-          >
-          <span class="submit__text">We’ll answer you in the next 24 hours</span>
-        </v-sheet>
-      </v-form>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
-import { reactive, Ref, ref, UnwrapRef } from 'vue';
-import bg from '@/assets/icons/bg.png';
+import { reactive, ref, Ref, UnwrapRef } from 'vue';
+import bg from '@/assets/icons/bg.svg';
 import useVuelidate from '@vuelidate/core';
 import { email, required } from '@vuelidate/validators';
 import type { ContactForm } from '@/models/contactForm';
-import type { BusinessType } from '@/models/businessType';
 import axios from 'axios';
+import { BusinessType } from '@/models/businessType';
+import { useDisplay } from 'vuetify';
 
 export default {
   setup() {
@@ -88,7 +17,7 @@ export default {
       comments: '',
     };
 
-    const items: Ref<UnwrapRef<BusinessType[]>> = ref([
+    const businessType: Ref<UnwrapRef<BusinessType[]>> = ref([
       'Finances',
       'Construction',
       'Food',
@@ -114,11 +43,13 @@ export default {
 
     const v$ = useVuelidate(rules, state);
 
-    return { items, state, v$ };
+    return { businessType, state, v$ };
   },
   data() {
+    const display = useDisplay();
     return {
       bg,
+      display,
       snackbar: {
         open: false,
         message: '',
@@ -151,86 +82,184 @@ export default {
 };
 </script>
 
-<style scoped>
-.form__wrapper {
+<template>
+  <div class="contact">
+    <div class="contact__container">
+      <div class="contact__form_title">
+        <span>Contact Us</span>
+      </div>
+      <div class="contact__form_wrapper">
+        <div class="form__wrapper">
+          <v-form class="form" @submit.prevent="onSubmit">
+            <div class="form__input">
+              <v-text-field
+                required
+                v-model="state.name"
+                :error-messages="v$.name.$errors.map((e) => e.$message as string)"
+                @input="v$.name.$touch"
+                @blur="v$.name.$touch"
+                variant="outlined"
+                placeholder="Your Name"
+                class="input-field"
+              />
+            </div>
+            <div class="form__input">
+              <v-text-field
+                required
+                v-model="state.email"
+                :error-messages="v$.email.$errors.map((e) => e.$message as string)"
+                @input="v$.email.$touch"
+                @blur="v$.email.$touch"
+                @change="v$.email"
+                variant="outlined"
+                placeholder="Email"
+                class="input-field"
+              />
+            </div>
+            <div class="form__input">
+              <v-select
+                required
+                v-model="state.businessType"
+                :error-messages="v$.businessType.$errors.map((e) => e.$message as string)"
+                @change="v$.businessType.$touch"
+                @blur="v$.businessType.$touch"
+                :items="businessType"
+                variant="outlined"
+                placeholder="Type of your Business"
+                class="input-field"
+              />
+            </div>
+            <div class="comment form__input">
+              <v-textarea
+                required
+                no-resize
+                v-model="state.comments"
+                :error-messages="v$.comments.$errors.map((e) => e.$message as string)"
+                @change="v$.comments.$touch"
+                @blur="v$.comments.$touch"
+                rows="3"
+                density="comfortable"
+                variant="outlined"
+                placeholder="Ask a question or leave a request"
+                class="input-field"
+              />
+            </div>
+
+            <div class="submit__wrapper">
+              <div class="submit__wrapper-btn">
+                <v-btn
+                  size="large"
+                  type="submit"
+                  color="black"
+                  style="text-transform: capitalize"
+                  :disabled="v$.$invalid"
+                  @click="snackbar.open = true"
+                  >Send a Message
+                  <v-snackbar v-if="snackbar.message" color="black" v-model="snackbar.open" close-delay="2000"
+                    >{{ snackbar.message }}
+                  </v-snackbar>
+                </v-btn>
+              </div>
+              <div class="submit__wrapper-text">
+                <span>We’ll answer you in the next 24 hours</span>
+              </div>
+            </div>
+          </v-form>
+        </div>
+        <div class="contact-form__image">
+          <img :src="bg" alt="bg" class="contact-form__img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.contact {
   width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  gap: 30px;
+  margin: 100px 0;
 }
 
-.image__wrapper {
-  width: 478px;
-  height: 337px;
+.contact__form_wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  overflow: hidden;
+  justify-content: space-between;
+
+  .form__wrapper {
+    flex: 0 0 50%;
+  }
+
+  .contact-form__image {
+    margin-bottom: 100px;
+    padding: 40px 80px;
+    background: #ffffff;
+    border-radius: 21px;
+    flex: 0 0 45%;
+  }
+}
+
+.v-field__input {
+  border: 3px solid #000000 !important;
+}
+
+.contact__form_title {
+  max-width: 210px;
+  font-size: 23px;
+  font-weight: 600;
+  padding: 14px 40px;
+  border: 3px solid #000000;
+  border-radius: 15px;
+  margin: 40px 0;
 }
 
 .form {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+
+  &__input {
+    width: 100%;
+  }
 }
 
 .submit__wrapper {
   width: 100%;
   display: flex;
-  font-size: 16px;
+  margin: 10px 0;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   justify-content: space-between;
-}
 
-.submit__text {
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-.submit__btn {
-  max-width: 240px;
-  font-size: 1.1em;
-  background: #000;
-  color: #fff;
-  text-transform: capitalize;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .form__wrapper {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+  &-text {
+    opacity: 0.8;
+    order: 2;
+    font-size: 14px;
   }
 
-  .form__container {
-    width: 100%;
-  }
-  .image__wrapper {
-    display: none;
-  }
-}
-
-@media (max-width: 390px) {
-  .submit__wrapper {
-    flex-direction: column-reverse;
-    gap: 20px;
+  &-btn {
+    max-width: 240px;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    border-radius: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .submit__text {
-    font-size: 9px;
+  .contact__form_wrapper {
+    flex-direction: column;
   }
 
-  .submit__btn {
-    max-width: 150px;
-    font-size: 12px;
+  .form__wrapper,
+  .contact-form__image {
+    flex: 1;
+  }
+
+  .contact-form__image {
+    margin-top: 20px;
   }
 }
 </style>

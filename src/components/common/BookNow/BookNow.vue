@@ -1,25 +1,28 @@
 <template>
-  <v-container class="bookNow__wrapper">
-    <div class="book">
-      <p>Hurry up to, order a design from our team!</p>
+  <div class="hurry-up">
+    <div class="hurry-up__container">
+      <div class="hurry-up__fix">
+        <div class="hurry-up__title">Hurry up to, order a design from our team!</div>
+        <div class="hurry-up__shell">
+          <v-btn size="x-large" variant="flat" class="book__btn"
+            ><span class="btn text-lg-h5 text-md-h-6 text-sm-body-1"
+              >{{ display.md.value ? 'Order now' : 'Book now' }}
+            </span>
+            <ModalForm />
+          </v-btn>
+        </div>
+      </div>
     </div>
-    <v-btn size="x-large" variant="flat" class="book__btn"><span class="btn">Book now </span> <ModalForm /> </v-btn>
-  </v-container>
+  </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import ModalForm from '../ModalForm/ModalForm.vue';
+import { useDisplay } from 'vuetify';
 
-export default {
-  components: {
-    ModalForm,
-  },
-  data() {
-    return {
-      dialog: false,
-    };
-  },
-};
+const display = useDisplay();
+
+let dialog: boolean = false;
 </script>
 
 <style scoped lang="scss">

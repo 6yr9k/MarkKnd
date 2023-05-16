@@ -11,8 +11,11 @@
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <v-btn size="x-large" variant="flat" color="black" class="book__btn" style="border-radius: 13px"
-            ><span class="btn">Explore now</span> <ModalForm />
+          <v-btn size="x-large" color="black" variant="flat" class="book__btn"
+            ><span class="btn text-lg-h5 text-md-h-6 text-sm-body-1"
+              >{{ display.md.value ? 'Order now' : 'Book now' }}
+            </span>
+            <ModalForm />
           </v-btn>
         </div>
         <div class="customers__img_2">
@@ -38,7 +41,7 @@
   <div class="who items-who items-who_2">
     <div class="items-who__container items-who__container_2">
       <div class="items-who__image items-who__image_2">
-        <img src="../../../assets/bj/who2.svg" alt="" class="items-who__img items-who__img_2" />
+        <img src="../../../assets/bj/who2.svg" alt="who2" class="items-who__img items-who__img_2" />
       </div>
       <div class="items-who__item items-who__item_2">
         <h2 class="items-who__title items-who__title_2">We work for You!</h2>
@@ -49,12 +52,27 @@
       </div>
     </div>
   </div>
-  <div class="my-16">
-    <BookNow />
-  </div>
 </template>
 
 <script setup>
-import BookNow from '@/components/common/BookNow/BookNow.vue';
 import ModalForm from '@/components/common/ModalForm/ModalForm.vue';
+import { useDisplay } from 'vuetify';
+
+const display = useDisplay();
 </script>
+
+<style scoped>
+.book__btn {
+  font-family: 'Popins', sans-serif;
+  background: #ffffff;
+  padding: 13px 40px;
+  text-transform: inherit;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 21px;
+  color: #161719;
+  transition: all 0.3s ease-in-out;
+  line-height: 126%;
+  text-align: center;
+}
+</style>
