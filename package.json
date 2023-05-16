@@ -37,7 +37,6 @@
     "start-server-and-test": "^2.0.0",
     "typescript": "^5.0.4",
     "vite": "^4.3.5",
-    "vite-plugin-checker": "^0.6.0",
-    "vite-plugin-vuetify": "^1.0.2"
+    "vite-plugin-checker": "^0.6.0"
   }
 }

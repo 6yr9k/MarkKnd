@@ -1020,11 +1020,7 @@ body {
   }
   // .reviews__container
 
-  &__container {
-
-
-  }
-  &__title-shell {
+  .reviews__title-shell {
     display: flex;
     justify-content: center;
     position: relative;

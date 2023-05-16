@@ -33,9 +33,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.questions__wrapper {
-  margin-top: -50px;
-  margin-bottom: 150px;
-}
-</style>
+<style scoped></style>

@@ -17,12 +17,8 @@ const app = createApp(App);
 app.use(router);
 app.use(
   createVuetify({
-    ssr: true,
     components,
     directives,
-    defaults: {
-      VInput: {},
-    },
     icons: {
       defaultSet: 'mdi',
       aliases,

@@ -3,7 +3,7 @@
     <div class="notice__wrapper">
       <div class="dot"></div>
 
-      <div class="text">
+      <div class="dividev__wrapper-text">
         <strong>IMPORTANT TO NOTICE!</strong>
         We are a marketing agency that helps big and small companies to grow and expand as well as give them the best
         customer service. We have a dedicated team of full-time staff that ensure your company has the best customer
@@ -28,7 +28,7 @@
   margin-top: 10px;
 }
 
-.text {
+.dividev__wrapper-text {
   font-weight: 600;
   font-size: 23px;
   line-height: 155%;

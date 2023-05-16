@@ -1,9 +1,7 @@
 <template>
   <div class="reviews">
     <div class="reviews__container">
-      <div class="reviews__title-shell">
-        <div class="reviews__title">Reviews</div>
-      </div>
+      <Divider text="Reviews" />
       <div class="reviews__carousel">
         <div class="reviews__picture-button">
           <img class="reviews__carousel-button" src="../../../assets/bj/carousel-button.svg" alt="" />
