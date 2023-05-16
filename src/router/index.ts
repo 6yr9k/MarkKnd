@@ -37,6 +37,12 @@ const router = createRouter({
       name: 'contacts',
       component: () => import(/* webpackChunkName: "contact" */ '@/views/ContactsView.vue'),
     },
+    { path: RouterLink.TERMS, name: 'terms', component: () => import('@/components/common/TermsOfUse /TermOfUse.vue') },
+    {
+      path: RouterLink.PRIVACY,
+      name: 'privacy',
+      component: () => import('@/components/common/PrivacyPolicy/PrivacyPolicy.vue'),
+    },
   ],
 });
 

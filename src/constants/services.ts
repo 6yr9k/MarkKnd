@@ -1,9 +1,9 @@
-import redesign from '../assets/service/redesign.png';
-import landing from '../assets/service/landingDesign.png';
-import multiPage from '../assets/service/multiPages.png';
-import manyPages from '../assets/service/manyPages.png';
-import wpTemplate from '../assets/service/wpTemplate.png';
-import fdTemplate from '../assets/service/fdTemplate.png';
+import redesign from '../assets/service/redesign.svg';
+import landing from '../assets/service/landingDesign.svg';
+import multiPage from '../assets/service/multiPages.svg';
+import manyPages from '../assets/service/manyPages.svg';
+import wpTemplate from '../assets/service/wpTemplate.svg';
+import fdTemplate from '../assets/service/fdTemplate.svg';
 import type { Services } from '@/models';
 
 export const services: Services[] = [

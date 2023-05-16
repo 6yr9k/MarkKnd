@@ -1,101 +1,88 @@
+<script lang="ts">
+import Divider from '@/components/common/Divider/Divider.vue';
+import ReviewsCards from '@/components/homePage/ReviewsCards/ReviewsCards.vue';
+import { reviews } from '@/constants';
+import prev from '../../../assets/bj/carousel-button.svg';
+import next from '../../../assets/bj/carousel-button2.svg';
+
+export default {
+  components: { Divider, ReviewsCards },
+  data: () => ({
+    prev,
+    next,
+    reviews,
+  }),
+  computed: {
+    columns() {
+      if (this.$vuetify.display.xl) {
+        return 3;
+      }
+
+      if (this.$vuetify.display.lg) {
+        return 3;
+      }
+
+      if (this.$vuetify.display.md) {
+        return 2;
+      }
+
+      return 1;
+    },
+  },
+};
+</script>
+
 <template>
   <div class="reviews">
     <div class="reviews__container">
       <Divider text="Reviews" />
       <div class="reviews__carousel">
-        <div class="reviews__picture-button">
-          <img class="reviews__carousel-button" src="../../../assets/bj/carousel-button.svg" alt="" />
-        </div>
         <div class="reviews__items">
-          <div class="reviews__item reviews__item_1">
-            <div class="item-reviews">
-              <div class="item-reviews__head">
-                <div class="item-reviews__picture">
-                  <img class="item-reviews__image" src="../../../assets/bj/reviews1.svg" alt="" />
-                </div>
-                <div class="item-reviews__item">
-                  <div class="item-reviews__name">Allan Becker</div>
-                  <div class="item-reviews__job">Influencer</div>
-                </div>
-              </div>
-              <div class="item-reviews__body">
-                <div class="item-reviews__text">
-                  I am very pleased with the work of this agency! Always in touch, always answer all questions and never
-                  leave. I'm lucky that I contacted them! I am answer all questions and never leave. I'm lucky that I
-                  contacted them!
-                </div>
-              </div>
-              <div class="item-reviews__grade">
-                <a href="" class="item-reviews__button">Rating</a>
-                <div class="item-reviews__stars">
-                  <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="reviews__item reviews__item_2">
-            <div class="item-reviews">
-              <div class="item-reviews__head">
-                <div class="item-reviews__picture">
-                  <img class="item-reviews__image" src="../../../assets/bj/reviews1.svg" alt="" />
-                </div>
-                <div class="item-reviews__item">
-                  <div class="item-reviews__name">Allan Becker</div>
-                  <div class="item-reviews__job">Influencer</div>
-                </div>
-              </div>
-              <div class="item-reviews__body">
-                <div class="item-reviews__text">
-                  I am very pleased with the work of this agency! Always in touch, always answer all questions and never
-                  leave. I'm lucky that I contacted them!
-                </div>
-              </div>
-              <div class="item-reviews__grade">
-                <a href="" class="item-reviews__button">Rating</a>
-                <div class="item-reviews__stars">
-                  <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="reviews__item reviews__item_3">
-            <div class="item-reviews">
-              <div class="item-reviews__head">
-                <div class="item-reviews__picture">
-                  <img class="item-reviews__image" src="../../../assets/bj/reviews1.svg" alt="" />
-                </div>
-                <div class="item-reviews__item">
-                  <div class="item-reviews__name">Allan Becker</div>
-                  <div class="item-reviews__job">Influencer</div>
-                </div>
-              </div>
-              <div class="item-reviews__body">
-                <div class="item-reviews__text">
-                  I am very pleased with the work of this agency! Always in touch, always answer all questions and never
-                  leave. I'm lucky that I contacted them!
-                </div>
-              </div>
-              <div class="item-reviews__grade">
-                <a href="" class="item-reviews__button">Rating</a>
-                <div class="item-reviews__stars">
-                  <img class="item-reviews__star" src="../../../assets/bj/reviews-stars.svg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reviews__picture-button">
-          <img class="item-reviews__carousel-button2" src="../../../assets/bj/carousel-button2.svg" alt="" />
+          <v-carousel hide-delimiters show-arrows class="w-100">
+            <template v-slot:prev="{ props }">
+              <v-btn class="prev__btn">
+                <img class="reviews__carousel-button" :src="prev" alt="" @click="props.onClick" />
+              </v-btn>
+            </template>
+            <template v-for="(review, index) in reviews">
+              <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1" :key="index">
+                <v-row class="flex-nowrap" style="height: 100%">
+                  <template v-for="(n, i) in columns">
+                    <template v-if="+index + i < reviews.length">
+                      <v-col :key="i">
+                        <div v-if="+index + i < reviews.length" style="height: 100%">
+                          <v-row class="fill-height" align="center" justify="center">
+                            <ReviewsCards :review="review" />
+                          </v-row>
+                        </div>
+                      </v-col>
+                    </template>
+                  </template>
+                </v-row>
+              </v-carousel-item>
+            </template>
+            <template v-slot:next="{ props }">
+              <v-btn class="next__btn" flat>
+                <img class="reviews__carousel-button" :src="next" alt="" @click="props.onClick" />
+              </v-btn>
+            </template>
+          </v-carousel>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Divider from '@/components/common/Divider/Divider.vue';
+<style scoped lang="scss">
+.prev__btn {
+  max-width: 40px;
+  margin-left: -15px;
+  bottom: 1%;
+}
 
-export default {
-  components: { Divider },
-};
-</script>
+.next__btn {
+  max-width: 40px;
+  margin-right: -15px;
+  bottom: 3%;
+}
+</style>

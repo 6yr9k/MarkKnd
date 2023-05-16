@@ -5,6 +5,7 @@ import { BusinessType } from '@/models/businessType';
 import { email, required } from '@vuelidate/validators';
 import useVuelidate from '@vuelidate/core';
 import axios from 'axios';
+import { useDisplay } from 'vuetify';
 
 export default {
   setup() {
@@ -44,7 +45,9 @@ export default {
     return { items, state, v$ };
   },
   data() {
+    const display = useDisplay();
     return {
+      display,
       snackbar: {
         open: false,
         message: '',
@@ -118,25 +121,34 @@ export default {
             placeholder="Type of your Business"
           />
 
-          <v-sheet class="submit__wrapper">
-            <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
-            <span class="submit__text">We’ll answer you in the next 24 hours</span>
-          </v-sheet>
+          <v-responsive v-if="display.lg || display.md">
+            <div class="submit__wrapper">
+              <span class="submit__text">We’ll answer you in the next 24 hours</span>
+              <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
+            </div>
+          </v-responsive>
         </div>
 
         <div class="textarea">
-          <v-textarea
-            required
-            no-resize
-            v-model="state.comments"
-            :error-messages="v$.comments.$errors.map((e) => e.$message as string)"
-            @change="v$.comments.$touch"
-            @blur="v$.comments.$touch"
-            rows="3"
-            class="comment form__input v-layout--full-height"
-            variant="outlined"
-            placeholder="Ask a question or leave a request"
-          />
+          <v-responsive>
+            <v-textarea
+              required
+              no-resize
+              v-model="state.comments"
+              :error-messages="v$.comments.$errors.map((e) => e.$message as string)"
+              @change="v$.comments.$touch"
+              @blur="v$.comments.$touch"
+              rows="3"
+              class="comment form__input v-layout--full-height"
+              variant="outlined"
+              placeholder="Ask a question or leave a request"
+            />
+          </v-responsive>
+        </div>
+
+        <div class="submit__wrapper" v-if="display.sm">
+          <span class="submit__text">We’ll answer you in the next 24 hours</span>
+          <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
         </div>
       </v-form>
     </v-card>
@@ -181,20 +193,63 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
+  order: 2;
 }
 
 .submit__btn {
   max-width: 240px;
   font-size: 1.1em;
+
   background: #000;
   color: #fff;
   text-transform: capitalize;
   border-radius: 10px;
+  align-self: center;
+  order: 1;
+}
+
+.submit__text {
+  order: 2;
+}
+
+@media (max-width: 1050px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card__modal {
+    padding: 30px;
+  }
+
+  .submit__wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    order: 3;
+  }
+
+  .submit__btn {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .submit__text {
+    order: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .card__modal {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 768px) {
   .card__modal {
-    padding: 30px 40px;
+    padding: 20px;
   }
 }
 </style>

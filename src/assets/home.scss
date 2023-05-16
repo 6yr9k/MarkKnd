@@ -232,7 +232,6 @@ body {
   }
   &__checkbox:checked ~ .burger__main-menu {
     height: 290px;
-    // font-size: 14px;
   }
 
   // .burger__label
@@ -261,10 +260,6 @@ body {
     background-color: #000000;
     transition: all 0.25s linear 0s;
     // .burger__line_1
-
-    &_1 {
-      // top: 0px;
-    }
 
     // .burger__line_2
 
@@ -1011,7 +1006,7 @@ body {
 
 
 .reviews {
-  margin-bottom: 130px;
+  position: relative;
   @media (max-width: 991.98px) {
     margin-bottom: 60px;
   }
@@ -1097,6 +1092,8 @@ body {
 
   &__picture-button {
     cursor: pointer;
+    max-width: 50px;
+    margin-left: -15px;
     @media (max-width: 991.98px) {
       transform: scale(0.7);
     }
@@ -1110,11 +1107,13 @@ body {
   // .reviews__items
 
   &__items {
+    position: relative;
+    width: 100%;
     display: flex;
-    // flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
     row-gap: 30px;
-    margin: 0px -15px;
-    width: 85%;
+    margin: 0 auto;
     @media (max-width: 991.98px) {
       margin: 0px -7px;
     }
@@ -1126,40 +1125,9 @@ body {
   // .reviews__item
 
   &__item {
-    padding: 0px 15px;
     flex: 1 1 33.333%;
-    // min-width: 330px;
-    @media (max-width: 991.98px) {
-      padding: 0px 7px;
-    }
-    @media (max-width: 767.98px) {
-
-    }
   }
-  &__item_1 {
-    @media (max-width: 991.98px) {
 
-    }
-    @media (max-width: 767.98px) {
-
-    }
-  }
-  &__item_2 {
-    @media (max-width: 991.98px) {
-
-    }
-    @media (max-width: 767.98px) {
-      display: none;
-    }
-  }
-  &__item_3 {
-    @media (max-width: 991.98px) {
-
-    }
-    @media (max-width: 767.98px) {
-      display: none;
-    }
-  }
   // .reviews__job
 
 }

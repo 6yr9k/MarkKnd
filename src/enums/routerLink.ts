@@ -4,4 +4,6 @@ export const enum RouterLink {
   SERVICE = '/services',
   SERVICE_DETAILS = '/services/:id',
   CONTACT = '/contacts',
+  TERMS = '/terms',
+  PRIVACY = '/privacy',
 }

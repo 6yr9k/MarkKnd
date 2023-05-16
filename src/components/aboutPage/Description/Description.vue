@@ -1,24 +1,30 @@
 <template>
   <div class="description__container">
-    <div class="about__description">
-      <div class="bg">
-        <img src="./img/leftBg.jpg" alt="bg" />
-      </div>
-      <div class="about__text_wrapper">
-        <h1 class="about__title">About Us</h1>
-        <p class="about__text">
-          BJ Group offers custom Web-Design services, from initial concept to final delivery! We have the expertise,
-          experience and unique insight that allows us to create a compelling and unique design for each customer.
-        </p>
+    <v-responsive>
+      <div class="about__description">
+        <div class="bg">
+          <img src="./img/leftBg.svg" alt="bg" />
+        </div>
 
-        <v-btn rounded elevation="10" class="about__btn">Explore Now</v-btn>
-      </div>
+        <div class="about__text_wrapper">
+          <h1 class="about__title">About Us</h1>
+          <p class="about__text">
+            BJ Group offers custom Web-Design services, from initial concept to final delivery! We have the expertise,
+            experience and unique insight that allows us to create a compelling and unique design for each customer.
+          </p>
 
-      <div class="bg">
-        <img src="./img/rightBg.jpg" alt="bg" />
+          <v-btn rounded elevation="10" class="about__btn"
+            >Explore Now
+            <ModalForm />
+          </v-btn>
+        </div>
+
+        <div class="bg">
+          <img src="./img/rightBg.svg" alt="bg" />
+        </div>
       </div>
-    </div>
-    <FaqDivider text="FAQ" />
+      <FaqDivider text="FAQ" />
+    </v-responsive>
   </div>
 </template>
 
@@ -87,4 +93,5 @@
 </style>
 <script setup>
 import FaqDivider from '@/components/common/Divider/Divider.vue';
+import ModalForm from '@/components/common/ModalForm/ModalForm.vue';
 </script>

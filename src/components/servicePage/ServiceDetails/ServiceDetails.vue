@@ -42,7 +42,7 @@ const service = computed(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .detail {
   border: 1px solid #000000;
 }
