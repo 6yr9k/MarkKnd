@@ -38,32 +38,30 @@ export default {
       <Divider text="Reviews" />
       <div class="reviews__carousel">
         <div class="reviews__items">
-          <v-carousel hide-delimiters show-arrows class="w-100">
+          <v-carousel hide-delimiters show-arrows style="height: auto">
             <template v-slot:prev="{ props }">
-              <v-btn class="prev__btn">
-                <img class="reviews__carousel-button" :src="prev" alt="" @click="props.onClick" />
+              <v-btn size="small" @click="props.onClick" class="prev__btn">
+                <v-icon icon="mdi-chevron-left" size="x-large" />
               </v-btn>
             </template>
+
             <template v-for="(review, index) in reviews">
               <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1" :key="index">
-                <v-row class="flex-nowrap" style="height: 100%">
+                <v-row class="flex-nowrap">
                   <template v-for="(n, i) in columns">
                     <template v-if="+index + i < reviews.length">
-                      <v-col :key="i">
-                        <div v-if="+index + i < reviews.length" style="height: 100%">
-                          <v-row class="fill-height" align="center" justify="center">
-                            <ReviewsCards :review="review" />
-                          </v-row>
-                        </div>
-                      </v-col>
+                      <div v-if="+index + i < reviews.length">
+                        <ReviewsCards :review="review" />
+                      </div>
                     </template>
                   </template>
                 </v-row>
               </v-carousel-item>
             </template>
+
             <template v-slot:next="{ props }">
-              <v-btn class="next__btn" flat>
-                <img class="reviews__carousel-button" :src="next" alt="" @click="props.onClick" />
+              <v-btn size="small" @click="props.onClick" class="next__btn">
+                <v-icon icon="mdi-chevron-right" size="x-large" />
               </v-btn>
             </template>
           </v-carousel>
@@ -75,14 +73,9 @@ export default {
 
 <style scoped lang="scss">
 .prev__btn {
-  max-width: 40px;
-  margin-left: -15px;
-  bottom: 1%;
+  margin-left: -10px;
 }
-
 .next__btn {
-  max-width: 40px;
-  margin-right: -15px;
-  bottom: 3%;
+  margin-right: -10px;
 }
 </style>

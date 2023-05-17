@@ -3,10 +3,10 @@
     <Divider text="Contacts" />
     <div class="contact__list">
       <div class="contacts__row">
-        <ContactListItem v-for="contact of contacts.slice(0, 3)" :key="contact.id" :contact="contact" />
+        <ContactListItem v-for="contact of contacts.slice(0, 3)" :key="contact.id" :con="contact" />
       </div>
       <div class="contacts__row">
-        <ContactListItem v-for="contact of contacts.slice(3, 6)" :key="contact.id" :contact="contact" />
+        <ContactListItem v-for="contact of contacts.slice(3, 6)" :key="contact.id" :con="contact" />
       </div>
     </div>
   </div>

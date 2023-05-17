@@ -1,51 +1,46 @@
 <template>
   <div class="contacts__item">
-    <img v-if="contact.icon" :src="contact.icon" :alt="contact.contact" class="contacts__item-img" />
-    <a v-if="contact.id === 1" :href="'mailto:' + contact.contact" class="contacts__item-link">
+    <img v-if="con.icon" :src="con.icon" :alt="con.contact" class="contacts__item-img" />
+    <a v-if="con.id === 1" :href="'mailto:' + con.contact" class="contacts__item-link">
       <span>Email:</span>
-      {{ contact.contact }}
+      {{ con.contact }}
     </a>
-    <a v-else-if="contact.id === 4" :href="'tel:' + contact.contact" class="contacts__item-link"
-      ><span>Phone: </span>{{ contact.contact }}</a
+    <a v-else-if="con.id === 4" :href="'tel:' + con.contact" class="contacts__item-link"
+      ><span>Phone: </span>{{ con.contact }}</a
     >
-    <span v-else>{{ contact.contact }}</span>
+    <span v-else>{{ con.contact }}</span>
   </div>
 </template>
 
-<script lang="js">
-export default {
-  props: {
-    contact: {
-      type: Object,
-      required: true,
-    },
-  },
-};
+<script lang="ts" setup>
+import type { Contacts } from '@/models';
+
+defineProps<{ con: Contacts }>();
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .contacts__item {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 5px;
-}
 
-.contacts__item-link {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 5px;
-}
+  &-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 
-.contacts__item-img {
-  max-width: 20px;
-}
+  &-img {
+    max-width: 20px;
+  }
 
-@media (max-width: 768px) {
-  .contacts__item-link {
-    max-width: 240px;
+  @media (max-width: 768px) {
+    .contacts__item-link {
+      max-width: 240px;
+    }
   }
 }
 </style>

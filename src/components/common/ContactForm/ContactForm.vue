@@ -7,6 +7,7 @@ import type { ContactForm } from '@/models/contactForm';
 import axios from 'axios';
 import { BusinessType } from '@/models/businessType';
 import { useDisplay } from 'vuetify';
+import { useRoute } from 'vue-router';
 
 export default {
   setup() {
@@ -46,9 +47,11 @@ export default {
     return { businessType, state, v$ };
   },
   data() {
+    const router = useRoute();
     const display = useDisplay();
     return {
       bg,
+      router,
       display,
       snackbar: {
         open: false,
@@ -85,7 +88,7 @@ export default {
 <template>
   <div class="contact">
     <div class="contact__container">
-      <div class="contact__form_title">
+      <div class="contact__form_title" v-if="router.path === '/'">
         <span>Contact Us</span>
       </div>
       <div class="contact__form_wrapper">
@@ -175,6 +178,9 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.input-field {
+  width: 100%;
+}
 .contact {
   width: 100%;
   margin: 100px 0;
@@ -197,10 +203,6 @@ export default {
     border-radius: 21px;
     flex: 0 0 45%;
   }
-}
-
-.v-field__input {
-  border: 3px solid #000000 !important;
 }
 
 .contact__form_title {

@@ -34,7 +34,7 @@ export default {
           </div>
           <div class="footer__column">
             <div class="footer__title">Social Media</div>
-            <a v-for="soc of social" :href="soc.url" class="footer__link">{{ soc.name }}</a>
+            <a v-for="soc of social" target="_blank" :href="soc.url" class="footer__link">{{ soc.name }}</a>
           </div>
           <div class="footer__column">
             <div class="footer__title">Information</div>

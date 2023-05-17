@@ -1,13 +1,15 @@
 <template>
   <div class="questions__container">
-    <questions-list-item
-      v-for="(question, idx) of questions"
-      :key="question.id"
-      :questions="question"
-      :idx="idx"
-      :show="showIdx === idx"
-      @toggle="toggleAnswer(idx)"
-    />
+    <v-responsive>
+      <questions-list-item
+        v-for="(question, idx) of questions"
+        :key="question.id"
+        :questions="question"
+        :idx="idx"
+        :show="showIdx === idx"
+        @toggle="toggleAnswer(idx)"
+      />
+    </v-responsive>
     <BookNow />
   </div>
 </template>
