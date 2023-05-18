@@ -9,6 +9,10 @@
 <script setup>
 import Header from '@/components/common/Header/Header.vue';
 import Footer from '@/components/common/Footer/Footer.vue';
+import { onMounted } from 'vue';
+import { easterEgg } from '@/constants';
+
+onMounted(() => console.log(easterEgg()));
 </script>
 
 <style lang="scss" scoped>

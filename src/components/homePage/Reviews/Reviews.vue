@@ -73,9 +73,10 @@ export default {
 
 <style scoped lang="scss">
 .prev__btn {
-  margin-left: -10px;
+  margin-left: -15px;
 }
+
 .next__btn {
-  margin-right: -10px;
+  margin-right: -15px;
 }
 </style>

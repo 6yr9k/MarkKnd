@@ -14,7 +14,7 @@
   </v-item>
 </template>
 
-<script setup lang="ts" generic="">
+<script setup lang="ts">
 import type { Services } from '@/models';
 
 defineProps<Services>();

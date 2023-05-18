@@ -10,7 +10,7 @@ const generals: General[] = general;
     <div class="general__container">
       <div class="general__items">
         <div class="general__item" v-for="general of generals" :key="general.id">
-          <div class="item-general">
+          <div class="item-general" v-wave>
             <div class="item-general__picture">
               <img class="item-general__image" :src="general.avatar" :alt="general.title" />
             </div>

@@ -13,10 +13,10 @@ defineProps<{ contacts: Contacts[] }>();
       <div v-else-if="contact.id === 4">
         <a :href="'tel:' + contact.contact">Phone: {{ contact.contact }}</a>
       </div>
-      <div v-else class="contacts__row-item-content">
+      <a :href="contact?.link" v-else class="contacts__row-item-content">
         <img :src="contact?.icon" :alt="contact.id" class="contacts__row-item-img" />
         <span class="contacts__row-item-text">{{ contact.contact }}</span>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -34,6 +34,7 @@ defineProps<{ contacts: Contacts[] }>();
     align-self: center;
 
     &-content {
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 10px;

@@ -1,6 +1,6 @@
 <template>
   <v-responsive class="hurry-up">
-    <div class="hurry-up__container">
+    <div :class="router.path === RouterLink.ABOUT ? 'mt-10' : 'hurry-up__container'">
       <div class="hurry-up__fix">
         <div class="hurry-up__title">Hurry up to, order a design from our team!</div>
         <div class="hurry-up__shell">
@@ -19,8 +19,12 @@
 <script lang="ts" setup>
 import ModalForm from '../ModalForm/ModalForm.vue';
 import { useDisplay } from 'vuetify';
+import { useRoute } from 'vue-router';
+import { RouterLink } from '@/enums';
 
 const display = useDisplay();
+
+const router = useRoute();
 </script>
 
 <style scoped lang="scss">

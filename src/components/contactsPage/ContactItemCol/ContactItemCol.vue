@@ -27,14 +27,15 @@ defineProps<{ contacts: Contacts[] }>();
       </div>
     </div>
     <div class="contacts__col-content-item">
-      <div
+      <a
         v-for="contact in contacts.filter((item) => item.id === 5 || item.id === 6)"
         :key="contact.id"
+        :href="contact?.link"
         class="contacts__col-content-item-row"
       >
         <img :src="contact?.icon" :alt="contact.id" class="contacts__col-item-img" />
         <span class="contacts__col-item-text">{{ contact.contact }}</span>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -55,6 +56,7 @@ defineProps<{ contacts: Contacts[] }>();
     gap: 77px;
 
     &-item {
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 50px;

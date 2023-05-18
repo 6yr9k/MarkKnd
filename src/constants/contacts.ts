@@ -28,6 +28,7 @@ export const contacts: Contacts[] = [
     id: 5,
     contact: '@MarkFusion',
     icon: telegram,
+    link: 'https://t.me/MarkFusion',
   },
 
   {

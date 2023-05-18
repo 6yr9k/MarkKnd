@@ -1,7 +1,13 @@
 <template>
   <div class="divider__container">
     <div class="divider__shell">
-      <div class="divider__shell-title">{{ text }}</div>
+      <div class="divider__shell-title">
+        <v-tooltip :text="text" location="bottom">
+          <template v-slot:activator="{ props }">
+            <span v-bind="props">{{ text }}</span>
+          </template>
+        </v-tooltip>
+      </div>
     </div>
   </div>
 </template>
@@ -18,12 +24,15 @@ export default {
   justify-content: center;
   position: relative;
   margin-bottom: 65px;
+
   @media (max-width: 991.98px) {
     margin-bottom: 50px;
   }
+
   @media (max-width: 767.98px) {
     margin-bottom: 40px;
   }
+
   &::before {
     content: '';
     width: 40%;
@@ -33,12 +42,16 @@ export default {
     left: 0;
     background-color: #000;
     position: absolute;
+
     @media (max-width: 991.98px) {
-    }
-    @media (max-width: 767.98px) {
       width: 34%;
     }
+
+    @media (max-width: 767.98px) {
+      width: 28%;
+    }
   }
+
   &::after {
     content: '';
     width: 40%;
@@ -48,10 +61,13 @@ export default {
     right: 0;
     background-color: #000;
     position: absolute;
+
     @media (max-width: 991.98px) {
-    }
-    @media (max-width: 767.98px) {
       width: 34%;
+    }
+
+    @media (max-width: 767.98px) {
+      width: 28%;
     }
   }
 
@@ -64,11 +80,13 @@ export default {
     padding: 15px 40px;
     border: 2px solid #000;
     border-radius: 20px;
+
     @media (max-width: 991.98px) {
       font-size: 18px;
       line-height: 22px;
       padding: 10px 25px;
     }
+
     @media (max-width: 767.98px) {
       font-size: 16px;
     }

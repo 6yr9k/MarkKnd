@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-12">
+  <div class="pl-13 pr-13">
     <div class="item-reviews">
       <div class="item-reviews__head">
         <div class="item-reviews__picture">

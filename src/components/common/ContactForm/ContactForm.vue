@@ -163,7 +163,9 @@ export default {
                 >
                   Send a Message
                   <v-snackbar v-if="snackbar.message" color="black" v-model="snackbar.open" close-delay="2000">
-                    {{ snackbar.message }}
+                    <p style="font-weight: bold; color: #b00020" class="text-center text-uppercase fa-bold">
+                      {{ snackbar.message }} ...
+                    </p>
                   </v-snackbar>
                 </v-btn>
               </div>
@@ -201,7 +203,6 @@ export default {
   }
 
   .contact-form__image {
-    margin-bottom: 100px;
     padding: 40px 80px;
     background: #ffffff;
     border-radius: 21px;
