@@ -177,6 +177,7 @@ body {
   // .header__point
 
   &__point {
+    font-weight: 500;
     transition: all 0.3s ease 0s;
     &:hover {
       text-shadow: .4px 0 0 #000000, -.4px 0 0 #000000;
@@ -184,6 +185,7 @@ body {
   }
 
   &__link {
+    font-weight: 500;
     color: #000000;
 
     &:hover {

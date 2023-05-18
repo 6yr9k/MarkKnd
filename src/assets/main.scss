@@ -2,7 +2,6 @@
 @import 'home';
 @import "vuetify/styles";
 
-
 *,
 *::before,
 *::after {
@@ -24,6 +23,12 @@ a {
   text-decoration: none;
   color: #000000;
 }
+
+span {
+  background-color: transparent !important;
+}
+
+
 
 
 

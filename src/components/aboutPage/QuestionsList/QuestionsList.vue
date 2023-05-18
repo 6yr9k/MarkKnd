@@ -1,38 +1,70 @@
 <template>
   <div class="questions__container">
-    <v-responsive>
-      <questions-list-item
-        v-for="(question, idx) of questions"
-        :key="question.id"
-        :questions="question"
-        :idx="idx"
-        :show="showIdx === idx"
-        @toggle="toggleAnswer(idx)"
-      />
-    </v-responsive>
+    <v-expansion-panels variant="accordion" class="questions__list">
+      <v-expansion-panel
+        v-for="q of questions"
+        :key="q.id"
+        elevation="10"
+        class="questions__list-item"
+        style="border: 2px solid #000000; border-radius: 15px !important"
+      >
+        <v-expansion-panel-title class="questions__list-item-title">{{ q.question }}</v-expansion-panel-title>
+        <v-expansion-panel-text class="questions__list-item-text">{{ q.answer }}</v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
     <BookNow />
   </div>
 </template>
 
-<script>
-import QuestionsListItem from '@/components/aboutPage/QuestionsListItem/QuestionsListItem.vue';
+<script lang="ts" setup>
 import BookNow from '@/components/common/BookNow/BookNow.vue';
-import { questions } from '@/constants/questions';
+import { questions as questionList } from '@/constants/questions';
 
-export default {
-  components: { BookNow, QuestionsListItem },
-  data() {
-    return {
-      showIdx: -1,
-      questions,
-    };
-  },
-  methods: {
-    toggleAnswer(idx) {
-      this.showIdx = this.showIdx === idx ? -1 : idx;
-    },
-  },
-};
+const questions = questionList;
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.questions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &-item {
+    &-title {
+      font-weight: 600;
+
+      @media (min-width: 1050px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 19px;
+        line-height: 23px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+
+      @media (min-width: 1050px) {
+        font-size: 22px;
+        line-height: 155%;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+</style>
