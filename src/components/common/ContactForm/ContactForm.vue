@@ -88,11 +88,13 @@ export default {
 <template>
   <div class="contact">
     <div class="contact__container">
-      <div class="contact__form_title" v-if="router.path === '/'">
-        <span>Contact Us</span>
-      </div>
       <div class="contact__form_wrapper">
         <div class="form__wrapper">
+          <div :class="display.smAndDown ? 'd-flex flex-row justify-center' : ''">
+            <div class="contact__form_title" v-if="router.path === '/'">
+              <span>Contact Us</span>
+            </div>
+          </div>
           <v-form class="form" @submit.prevent="onSubmit">
             <div class="form__input">
               <v-text-field
@@ -154,12 +156,14 @@ export default {
                   size="large"
                   type="submit"
                   color="black"
+                  class="submit__btn"
                   style="text-transform: capitalize"
                   :disabled="v$.$invalid"
                   @click="snackbar.open = true"
-                  >Send a Message
-                  <v-snackbar v-if="snackbar.message" color="black" v-model="snackbar.open" close-delay="2000"
-                    >{{ snackbar.message }}
+                >
+                  Send a Message
+                  <v-snackbar v-if="snackbar.message" color="black" v-model="snackbar.open" close-delay="2000">
+                    {{ snackbar.message }}
                   </v-snackbar>
                 </v-btn>
               </div>
@@ -169,7 +173,7 @@ export default {
             </div>
           </v-form>
         </div>
-        <div class="contact-form__image">
+        <div class="contact-form__image" v-if="!display.smAndDown">
           <img :src="bg" alt="bg" class="contact-form__img" />
         </div>
       </div>
@@ -183,7 +187,7 @@ export default {
 }
 .contact {
   width: 100%;
-  margin: 100px 0;
+  margin: 50px 0 100px 0;
 }
 
 .contact__form_wrapper {
@@ -240,13 +244,19 @@ export default {
     opacity: 0.8;
     order: 2;
     font-size: 14px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &-btn {
     max-width: 240px;
-    font-size: 1.1em;
-    text-transform: capitalize;
     border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 }
 
@@ -257,11 +267,30 @@ export default {
 
   .form__wrapper,
   .contact-form__image {
+    width: 100%;
     flex: 1;
+  }
+
+  .contact__form_title {
+    width: 100% !important ;
   }
 
   .contact-form__image {
     margin-top: 20px;
+  }
+}
+
+.submit__btn {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 23px;
+
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 }
 </style>

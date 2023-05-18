@@ -121,7 +121,7 @@ export default {
             placeholder="Type of your Business"
           />
 
-          <v-responsive v-if="display.lg || display.md">
+          <v-responsive v-if="display.mdAndUp">
             <div class="submit__wrapper">
               <span class="submit__text">We’ll answer you in the next 24 hours</span>
               <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
@@ -146,7 +146,7 @@ export default {
           </v-responsive>
         </div>
 
-        <div class="submit__wrapper" v-if="display.sm">
+        <div class="submit__wrapper" v-if="display.smAndDown">
           <span class="submit__text">We’ll answer you in the next 24 hours</span>
           <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
         </div>
@@ -210,6 +210,10 @@ export default {
 }
 
 .submit__text {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.5);
   order: 2;
 }
 

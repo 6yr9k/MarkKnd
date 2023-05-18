@@ -1,10 +1,10 @@
 <template>
   <main class="main">
-    <Customers />
-    <BookNow />
-    <General />
-    <Reviews />
-    <ContactForm />
+    <div class="py-5" data-aos="fade-zoom-in"><Customers /></div>
+    <div class="py-5" data-aos="fade-zoom-in"><BookNow /></div>
+    <div class="py-5" data-aos="fade-zoom-in"><General /></div>
+    <div class="py-5" data-aos="fade-zoom-in"><Reviews /></div>
+    <div class="py-5" data-aos="fade-zoom-in"><ContactForm /></div>
   </main>
 </template>
 

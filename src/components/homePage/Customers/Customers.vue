@@ -11,10 +11,8 @@
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <v-btn size="x-large" color="black" variant="flat" class="book__btn"
-            ><span class="btn text-lg-h5 text-md-h-6 text-sm-body-1"
-              >{{ display.md.value ? 'Order now' : 'Book now' }}
-            </span>
+          <v-btn size="x-large" rounded="lg" color="black" variant="flat" class="explore__btn">
+            <span class="explore__btn-text">{{ display.mdAndDown.value ? 'Explore Now' : 'Book now' }} </span>
             <ModalForm />
           </v-btn>
         </div>
@@ -61,7 +59,29 @@ import { useDisplay } from 'vuetify';
 const display = useDisplay();
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.explore__btn {
+  text-transform: inherit;
+
+  &-text {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
+}
+
 .book__btn {
   font-family: 'Popins', sans-serif;
   background: #ffffff;

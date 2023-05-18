@@ -1,7 +1,7 @@
 <template>
   <main class="main">
-    <ContactList />
-    <ContactForm />
+    <div data-aos="fade-zoom-in"><ContactList /></div>
+    <div data-aos="fade-zoom-in"><ContactForm /></div>
   </main>
 </template>
 

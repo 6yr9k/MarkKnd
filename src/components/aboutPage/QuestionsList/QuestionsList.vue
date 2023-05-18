@@ -12,7 +12,9 @@
         <v-expansion-panel-text class="questions__list-item-text">{{ q.answer }}</v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
-    <BookNow />
+    <div data-aos="fade-zoom-in">
+      <BookNow />
+    </div>
   </div>
 </template>
 

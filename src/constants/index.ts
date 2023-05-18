@@ -5,3 +5,4 @@ export * from './links';
 export * from './reviews';
 export * from './info';
 export * from './social';
+export * from './general';
