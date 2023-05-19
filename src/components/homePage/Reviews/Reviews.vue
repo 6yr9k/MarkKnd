@@ -47,7 +47,7 @@ export default {
 
             <template v-for="(review, index) in reviews">
               <v-carousel-item v-if="(index + 1) % columns === 1 || columns === 1" :key="index">
-                <v-row class="flex-nowrap" style="gap: 70px; margin-left: 50px; margin-right: 50px">
+                <v-row class="flex-nowrap review__row" style="">
                   <template v-for="(n, i) in columns">
                     <template v-if="+index + i < reviews.length">
                       <div v-if="+index + i < reviews.length">
@@ -74,6 +74,16 @@ export default {
 <style scoped lang="scss">
 .prev__btn {
   margin-left: -15px;
+}
+
+.review__row {
+  gap: 70px;
+  margin: 0 50px;
+
+  @media (min-width: 1200px) {
+    gap: 40px;
+    margin: 0 70px;
+  }
 }
 
 .next__btn {

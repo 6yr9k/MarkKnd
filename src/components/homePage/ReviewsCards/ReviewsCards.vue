@@ -13,7 +13,7 @@
       <div class="item-reviews__text">{{ review.text }}</div>
     </div>
     <div class="item-reviews__grade">
-      <v-btn size="small" color="black" style="cursor: default" class="item-reviews__button">Rating</v-btn>
+      <v-btn size="small" color="black" rounded="lg" style="cursor: default" class="item-reviews__button">Rating</v-btn>
       <div class="item-reviews__stars">
         <v-rating density="compact" v-model="rating" readonly></v-rating>
       </div>
