@@ -286,6 +286,10 @@ export default {
   font-size: 19px;
   line-height: 23px;
 
+  &:disabled {
+    background: #b4b4b4 !important ;
+  }
+
   @media (max-width: 991px) {
     font-size: 14px;
   }
