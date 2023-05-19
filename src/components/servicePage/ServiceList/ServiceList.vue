@@ -9,7 +9,16 @@ import Divider from '@/components/common/Divider/Divider.vue';
     <v-item-group mandatory>
       <Divider text="Our Service" />
       <v-row>
-        <v-col v-for="service in services" :key="service.id" class="service__item" cols="12" md="6" lg="4" sm="9">
+        <v-col
+          v-for="service in services"
+          align-self="center"
+          :key="service.id"
+          class="service__item"
+          cols="12"
+          md="5"
+          lg="4"
+          sm="7"
+        >
           <service-list-item
             :title="service.title"
             :short-description="service.shortDescription"

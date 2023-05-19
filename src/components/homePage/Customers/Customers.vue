@@ -1,3 +1,10 @@
+<script setup>
+import ModalForm from '@/components/common/ModalForm/ModalForm.vue';
+import { useDisplay } from 'vuetify';
+
+const display = useDisplay();
+</script>
+
 <template>
   <div class="customers">
     <div class="customers__container">
@@ -11,8 +18,8 @@
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <v-btn size="x-large" rounded="lg" color="black" variant="flat" class="explore__btn">
-            <span class="explore__btn-text">{{ display.mdAndDown.value ? 'Explore Now' : 'Book now' }} </span>
+          <v-btn size="x-large" rounded="lg" color="black" class="explore__btn">
+            {{ display.mdAndDown.value ? 'Explore Now' : 'Book now' }}
             <ModalForm />
           </v-btn>
         </div>
@@ -52,22 +59,16 @@
   </div>
 </template>
 
-<script setup>
-import ModalForm from '@/components/common/ModalForm/ModalForm.vue';
-import { useDisplay } from 'vuetify';
-
-const display = useDisplay();
-</script>
-
 <style scoped lang="scss">
 .explore__btn {
   text-transform: inherit;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  padding: 14px 42px;
+  border-radius: 15px !important;
 
   &-text {
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 27px;
-
     @media (max-width: 991px) {
       font-size: 18px;
     }

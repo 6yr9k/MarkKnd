@@ -30,7 +30,7 @@ export default {
             <RouterLink class="header__link" :to="link.path">{{ link.name }}</RouterLink>
           </li>
         </ul>
-        <RouterLink :to="RouterLink.CONTACT" class="header__button">Contact Now</RouterLink>
+        <v-btn size="x-large" :to="RouterLink.CONTACT" class="header__button">Contact Now</v-btn>
         <div class="burger">
           <input class="burger__checkbox" type="checkbox" id="check-menu" />
           <label class="burger__label" for="check-menu"></label>
@@ -48,3 +48,15 @@ export default {
     </div>
   </header>
 </template>
+
+<style lang="scss" scoped>
+.header__button {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 27px;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 15px;
+  text-transform: inherit;
+}
+</style>
