@@ -7,3 +7,4 @@ export * from './info';
 export * from './social';
 export * from './general';
 export * from './easterEgg';
+export * from './URL_API';

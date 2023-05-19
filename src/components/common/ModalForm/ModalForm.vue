@@ -6,6 +6,7 @@ import { email, required } from '@vuelidate/validators';
 import useVuelidate from '@vuelidate/core';
 import axios from 'axios';
 import { useDisplay } from 'vuetify';
+import { URL_API } from '@/constants';
 
 export default {
   setup() {
@@ -13,7 +14,7 @@ export default {
       name: '',
       email: '',
       businessType: null,
-      comments: '',
+      comment: '',
     };
 
     const items: Ref<UnwrapRef<BusinessType[]>> = ref([
@@ -37,7 +38,7 @@ export default {
       name: { required, $lazy: true },
       email: { required, email, $lazy: true },
       businessType: { required, $lazy: true },
-      comments: { required, $lazy: true },
+      comment: { required, $lazy: true },
     };
 
     const v$ = useVuelidate(rules, state);
@@ -61,7 +62,7 @@ export default {
         const isValid = this.v$.$validate();
 
         if (isValid) {
-          const res = await axios.post<{ message: string }>('http://localhost:5152/api/email/sent', this.state);
+          const res = await axios.post<{ message: string }>(URL_API, this.state);
 
           this.snackbar.message = res.data.message;
         }
@@ -69,12 +70,22 @@ export default {
         this.state.name = '';
         this.state.email = '';
         this.state.businessType = null;
-        this.state.comments = '';
+        this.state.comment = '';
       } catch (err) {
         if (err) {
           this.snackbar.message = err.message;
         }
       }
+    },
+  },
+  computed: {
+    isEmptyForm() {
+      return (
+        this.state.name === '' ||
+        this.state.email === '' ||
+        this.state.businessType === null ||
+        this.state.comment === ''
+      );
     },
   },
 };
@@ -124,7 +135,9 @@ export default {
           <v-responsive v-if="display.mdAndUp">
             <div class="submit__wrapper">
               <span class="submit__text">We’ll answer you in the next 24 hours</span>
-              <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid">Send a Message</v-btn>
+              <v-btn size="large" type="submit" class="submit__btn" :disabled="v$.$invalid || isEmptyForm"
+                >Send a Message</v-btn
+              >
             </div>
           </v-responsive>
         </div>
@@ -134,10 +147,10 @@ export default {
             <v-textarea
               required
               no-resize
-              v-model="state.comments"
-              :error-messages="v$.comments.$errors.map((e) => e.$message as string)"
-              @change="v$.comments.$touch"
-              @blur="v$.comments.$touch"
+              v-model="state.comment"
+              :error-messages="v$.comment.$errors.map((e) => e.$message as string)"
+              @change="v$.comment.$touch"
+              @blur="v$.comment.$touch"
               rows="3"
               class="comment form__input v-layout--full-height"
               variant="outlined"
