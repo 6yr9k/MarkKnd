@@ -58,5 +58,9 @@ export default {
   background: #000000;
   border-radius: 15px;
   text-transform: inherit;
+
+  @media (max-width: 766px) {
+    display: none;
+  }
 }
 </style>

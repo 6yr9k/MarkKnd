@@ -208,6 +208,14 @@ export default {
     border-radius: 21px;
     flex: 0 0 45%;
   }
+
+  @media (max-width: 999px) {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .contact__form_title {

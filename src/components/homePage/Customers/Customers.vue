@@ -18,7 +18,7 @@ const display = useDisplay();
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <v-btn size="x-large" rounded="lg" color="black" class="explore__btn">
+          <v-btn :size="display.lgAndUp.value ? 'x-large' : ''" color="black" class="explore__btn">
             {{ display.mdAndDown.value ? 'Explore Now' : 'Book now' }}
             <ModalForm />
           </v-btn>
