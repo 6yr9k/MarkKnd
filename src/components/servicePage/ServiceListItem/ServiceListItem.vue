@@ -2,7 +2,7 @@
   <v-item v-slot="{ isSelected, toggle }">
     <v-card class="card" width="337" height="387" @click="toggle" :to="{ name: 'service details', params: { id } }">
       <div class="card__title">
-        <h2>{{ title }}</h2>
+        <span>{{ title }}</span>
       </div>
       <div class="card__text">
         <h4>{{ shortDescription }}</h4>
@@ -32,7 +32,8 @@ defineProps<Services>();
 
   &__title {
     width: 100%;
-    padding: 5px 0;
+    font-size: 17px;
+    padding: 12px 10px;
     text-align: center;
     color: #ffffff;
     background-color: #000000;
