@@ -31,6 +31,7 @@ defineProps<{ contacts: Contacts[] }>();
         v-for="contact in contacts.filter((item) => item.id === 5 || item.id === 6)"
         :key="contact.id"
         :href="contact?.link"
+        target="_blank"
         class="contacts__col-content-item-row"
       >
         <img :src="contact?.icon" :alt="contact.id" class="contacts__col-item-img" />
@@ -69,6 +70,10 @@ defineProps<{ contacts: Contacts[] }>();
       }
     }
   }
+}
+
+.contacts__col-item-img {
+  max-width: 20px;
 }
 
 a,

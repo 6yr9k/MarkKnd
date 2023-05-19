@@ -1,16 +1,18 @@
 import linkedin from '../assets/bj/linkedin.svg';
 import behance from '../assets/bj/behance.svg';
 import telegram from '../assets/bj/telegram.svg';
-import avatar from '../assets/bj/frame380.jpg';
+import mark from '../assets/bj/mark.svg';
+import konstantin from '../assets/bj/konstantin.svg';
+import alim from '../assets/bj/alim.svg';
 import type { General } from '@/models';
 
 export const general: General[] = [
   {
     id: 1,
-    avatar: avatar,
+    avatar: mark,
     title: 'Mark Vassilevskiy',
     subtitle: 'CEO • UI/UX Designer',
-    text: "I am very pleased with the work of this agency! Always in touch, always answer all questions and never leave. I'm lucky that I contacted them!",
+    text: '3+ years of experience, passionate about creating UI,UX designs for diverse projects. Successfully completed 20+ huge projects.',
     network: [
       { icon: linkedin, text: '@markknd', link: 'https://www.linkedin.com/in/markknd/' },
       { icon: behance, text: '@metamark', link: 'https://www.behance.net/metamark' },
@@ -19,10 +21,10 @@ export const general: General[] = [
   },
   {
     id: 2,
-    avatar: avatar,
+    avatar: konstantin,
     title: 'Konstantin Invanenko',
     subtitle: 'UI/UX Designer',
-    text: "I am very pleased with the work of this agency! Always in touch, always answer all questions and never leave. I'm lucky that I contacted them!",
+    text: 'Senior UI/UX Designer with three years of experience. My goal is creating innovative and engaging designs for a diverse range of projects.',
     network: [
       { icon: linkedin, text: '@thekosti4', link: '#!' },
       {
@@ -35,10 +37,10 @@ export const general: General[] = [
   },
   {
     id: 3,
-    avatar: avatar,
+    avatar: alim,
     title: 'Alim Dzholdaspaev',
     subtitle: 'UI/UX Designer',
-    text: "I am very pleased with the work of this agency! Always in touch, always answer all questions and never leave. I'm lucky that I contacted them!",
+    text: 'UX/UI Designer with  two years of freelance and team experience. I work with such spheres as construction, restaurant businesses, medicine, etc.',
     network: [
       { icon: linkedin, text: '@alimdesign', link: 'https://www.linkedin.com/in/alimdesign/' },
       { icon: behance, text: '@al1mdes1gn', link: 'https://www.behance.net/al1mdes1gn' },

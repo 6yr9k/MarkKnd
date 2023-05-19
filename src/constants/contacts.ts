@@ -1,7 +1,7 @@
-import meta from '../assets/icons/meta.png';
-import discord from '../assets/icons/discord.png';
-import telegram from '../assets/icons/telegram.png';
-import instagram from '../assets/icons/instagram.png';
+import link from '../assets/icons/linkedin.svg';
+import discord from '../assets/icons/discord.svg';
+import telegram from '../assets/icons/telegram.svg';
+import instagram from '../assets/icons/instagram.svg';
 import type { Contacts } from '@/models/';
 
 export const contacts: Contacts[] = [
@@ -11,13 +11,15 @@ export const contacts: Contacts[] = [
   },
   {
     id: 2,
-    contact: '@metamark',
-    icon: meta,
+    contact: '@bjgroup-agency',
+    icon: link,
+    link: 'https://www.linkedin.com/company/bjgroup-agency/',
   },
   {
     id: 3,
-    contact: '@metamark',
+    contact: '@bjgroup.agency',
     icon: instagram,
+    link: 'https://www.instagram.com/bjgroup.agency/',
   },
 
   {
@@ -33,7 +35,8 @@ export const contacts: Contacts[] = [
 
   {
     id: 6,
-    contact: '@MarkFusion',
+    contact: '@BJ Group',
     icon: discord,
+    link: 'https://discord.gg/cvwRyHeR5t',
   },
 ];

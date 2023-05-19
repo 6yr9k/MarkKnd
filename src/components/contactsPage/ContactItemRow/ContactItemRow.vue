@@ -8,12 +8,12 @@ defineProps<{ contacts: Contacts[] }>();
   <div class="contacts__row">
     <div class="contacts__row-item" v-for="contact of contacts" :key="contact.id">
       <div v-if="contact.id === 1">
-        <a :href="'mailto:' + contact.contact">Email: {{ contact.contact }}</a>
+        <a target="_blank" :href="'mailto:' + contact.contact">Email: {{ contact.contact }}</a>
       </div>
       <div v-else-if="contact.id === 4">
         <a :href="'tel:' + contact.contact">Phone: {{ contact.contact }}</a>
       </div>
-      <a :href="contact?.link" v-else class="contacts__row-item-content">
+      <a target="_blank" :href="contact?.link" v-else class="contacts__row-item-content">
         <img :src="contact?.icon" :alt="contact.id" class="contacts__row-item-img" />
         <span class="contacts__row-item-text">{{ contact.contact }}</span>
       </a>
