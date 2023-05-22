@@ -4,10 +4,8 @@
       <div class="hurry-up__fix">
         <div class="hurry-up__title">Hurry up to, order a design from our team!</div>
         <div class="hurry-up__shell">
-          <v-btn :size="display.lgAndUp.value ? 'x-large' : 'default'" class="book__btn">
-            <span class="btn">
-              {{ display.lgAndUp.value ? 'Book now' : 'Order now' }}
-            </span>
+          <v-btn :size="display.lgAndUp.value ? 'x-large' : 'large'" class="book__btn">
+            Order now
             <ModalForm />
           </v-btn>
         </div>
@@ -30,26 +28,21 @@ const router = useRoute();
 <style scoped lang="scss">
 .book__btn {
   text-transform: inherit;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  padding: 0 42px;
+  letter-spacing: 0;
+  border-radius: 15px !important;
 
-  .btn {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 126%;
-    text-transform: inherit;
-
-    @media (max-width: 991px) {
-      font-size: 18px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 15px;
-    }
+  @media (max-width: 991px) {
+    padding: 0 30px;
+    font-size: 12px;
   }
 
   @media (max-width: 768px) {
     margin-top: 25px;
+    font-size: 15px;
   }
 }
 </style>

@@ -40,9 +40,9 @@ export default {
         <div class="reviews__items">
           <v-carousel hide-delimiters show-arrows style="height: auto">
             <template v-slot:prev="{ props }">
-              <v-btn size="small" @click="props.onClick" class="prev__btn">
-                <v-icon icon="mdi-chevron-left" size="x-large" />
-              </v-btn>
+              <div class="reviews__picture-button" @click="props.onClick">
+                <img class="reviews__carousel-button" src="@/assets/bj/carousel-button.svg" alt="" />
+              </div>
             </template>
 
             <template v-for="(review, index) in reviews">
@@ -60,9 +60,9 @@ export default {
             </template>
 
             <template v-slot:next="{ props }">
-              <v-btn size="small" @click="props.onClick" class="next__btn">
-                <v-icon icon="mdi-chevron-right" size="x-large" />
-              </v-btn>
+              <div class="reviews__picture-button" @click="props.onClick">
+                <img class="item-reviews__carousel-button2" src="@/assets/bj/carousel-button2.svg" alt="" />
+              </div>
             </template>
           </v-carousel>
         </div>

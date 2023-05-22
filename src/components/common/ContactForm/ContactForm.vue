@@ -167,14 +167,19 @@ export default {
                   size="large"
                   type="submit"
                   color="black"
-                  class="submit__btn"
+                  class="submit"
                   style="text-transform: capitalize"
                   :disabled="v$.$invalid || isEmptyForm"
                   @click="snackbar.open = true"
                 >
                   Send a Message
                   <v-snackbar v-if="snackbar.message" color="black" v-model="snackbar.open" close-delay="2000">
-                    <p style="font-weight: bold; color: #b00020" class="text-center text-uppercase fa-bold">
+                    <p
+                      :style="`font-weight: bold; color: ${
+                        snackbar.message === 'Email sent successfully' ? '#388E3C' : '#D32F2F'
+                      }`"
+                      class="text-center text-uppercase fa-bold"
+                    >
                       {{ snackbar.message }} ...
                     </p>
                   </v-snackbar>
@@ -195,6 +200,22 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.submit {
+  padding: 0 40px;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 23px;
+
+  @media (max-width: 991px) {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
 .input-field {
   width: 100%;
 }

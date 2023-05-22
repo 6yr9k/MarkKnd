@@ -18,7 +18,7 @@ const display = useDisplay();
             A Design Agency that can make your dream design come true! We offer various design services, such as UI, UX,
             Web, Mobile and many others!
           </div>
-          <v-btn :size="display.lgAndUp.value ? 'x-large' : ''" color="black" class="explore__btn">
+          <v-btn :size="display.lgAndUp.value ? 'x-large' : 'large'" color="black" class="explore__btn">
             {{ display.mdAndDown.value ? 'Explore Now' : 'Book now' }}
             <ModalForm />
           </v-btn>
@@ -65,8 +65,17 @@ const display = useDisplay();
   font-weight: 500;
   font-size: 22px;
   line-height: 27px;
-  padding: 14px 42px;
+  padding: 0 42px;
   border-radius: 15px !important;
+
+  @media (max-width: 991px) {
+    padding: 0 30px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 
   &-text {
     @media (max-width: 991px) {
